@@ -49,7 +49,7 @@ const Register = () => {
                     })
                     loginUser(email, password)
                     navigate('/')
-                    // location.reload()
+                    location.reload()
                     toast.success('Registration Successful')
                 })
                 .catch((error) => {

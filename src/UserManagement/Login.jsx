@@ -1,14 +1,15 @@
 import { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import toast, { Toaster } from 'react-hot-toast';
-import { FaFacebook, FaGithub, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { FaGithub, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth/cordova';
 
 const Login = () => {
 
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, loginWithGoogle } = useContext(AuthContext)
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
@@ -31,8 +32,21 @@ const Login = () => {
             })
     }
 
+    // sign in with google 
+    const googleProvider = new GoogleAuthProvider()
     const handleGoogleLogin = () => {
-        console.log('logging in with google')
+        loginWithGoogle(googleProvider)
+            .then((result) => {
+                console.log(result.user)
+                toast.success("Successfully Logged In")
+
+                // navigate to userprofile
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch((error) => {
+                console.log(error.message)
+                toast.error(error.message)
+            })
     }
 
     const handleFacebookLogin = () => {
