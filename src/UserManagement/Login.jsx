@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { FaFacebook, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
+
+    const {loginUser} = useContext(AuthContext)
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -14,6 +18,17 @@ const Login = () => {
         const email = userData.get('email');
         const password = userData.get('password')
         console.log(email, password)
+
+        loginUser(email, password)
+        .then((result)=>{
+            console.log(result.user)
+            navigate('/')
+            toast.success('Successfully Logged in')
+        })
+        .catch((error)=> {
+            console.error(error.message)
+            toast.error(error.message)
+        })
     }
 
     const handleGoogleLogin = () => {
@@ -29,8 +44,8 @@ const Login = () => {
          setShowpassword(!showPassword);
      }
     return (
-        <div>
-            <h1>Plese login</h1>
+        <div className='mt-12'>
+            <h1 className='text-3xl text-center font-bold'>Plese login</h1>
             <div>
                 <Helmet>
                     <title>DreamDwell | Login</title>
@@ -108,4 +123,4 @@ const Login = () => {
     );
 };
 
-export default Login; <h1>Plese login</h1>
+export default Login;

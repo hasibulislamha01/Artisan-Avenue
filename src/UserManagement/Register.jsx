@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaRegEyeSlash, FaRegEye } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 const Register = () => {
-
+    const { registerUser, updateUserProfile, loginUser } = useContext(AuthContext)
+    // console.log(registerUser)
     const [registerError, setRegisterError] = useState(null)
-
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -33,8 +35,28 @@ const Register = () => {
             setRegisterError("PassWord must contain at least one lowercase letter")
             return;
         }
-        else{
-            toast.success('Registration Successful')
+        else {
+            registerUser(email, password)
+                .then((result) => {
+                    console.log(result.user)
+                    console.log('Successfull:', userName, userPhoto, email, password)
+                    updateUserProfile(userName, userPhoto)
+                    .then(()=> {
+                        console.log('updating')
+                    })
+                    .catch((error)=> {
+                        console.error('failed to update user',error.message)
+                    })
+                    loginUser(email, password)
+                    navigate('/')
+                    // location.reload()
+                    toast.success('Registration Successful')
+                })
+                .catch((error) => {
+                    const errorMessage = error.message;
+                    console.error(errorMessage)
+                    setRegisterError(errorMessage)
+                })
         }
     }
 
@@ -45,10 +67,13 @@ const Register = () => {
         }
     }, [registerError])
 
+
+
     const [showPassword, setShowpassword] = useState(false)
 
     return (
         <div>
+            <Toaster></Toaster>
             <Helmet>
                 <title>TrustTravel | Register</title>
             </Helmet>
