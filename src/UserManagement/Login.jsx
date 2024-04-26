@@ -1,34 +1,34 @@
 import { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import toast, { Toaster } from 'react-hot-toast';
-import { FaFacebook, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    const {loginUser} = useContext(AuthContext)
+    const { loginUser } = useContext(AuthContext)
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault()
-        const userData = new FormData(e.currentTarget) 
+        const userData = new FormData(e.currentTarget)
         console.log(userData)
         const email = userData.get('email');
         const password = userData.get('password')
         console.log(email, password)
 
         loginUser(email, password)
-        .then((result)=>{
-            console.log(result.user)
-            navigate('/')
-            toast.success('Successfully Logged in')
-        })
-        .catch((error)=> {
-            console.error(error.message)
-            toast.error(error.message)
-        })
+            .then((result) => {
+                console.log(result.user)
+                navigate('/')
+                toast.success('Successfully Logged in')
+            })
+            .catch((error) => {
+                console.error(error.message)
+                toast.error(error.message)
+            })
     }
 
     const handleGoogleLogin = () => {
@@ -38,11 +38,11 @@ const Login = () => {
     const handleFacebookLogin = () => {
         console.log('logging in with facebook')
     }
-     // toggle show password
-     const [showPassword, setShowpassword] = useState(false);
-     const togglePasswordView = () => {
-         setShowpassword(!showPassword);
-     }
+    // toggle show password
+    const [showPassword, setShowpassword] = useState(false);
+    const togglePasswordView = () => {
+        setShowpassword(!showPassword);
+    }
     return (
         <div className='mt-12'>
             <h1 className='text-3xl text-center font-bold'>Plese login</h1>
@@ -98,21 +98,25 @@ const Login = () => {
                     </form>
 
                     <div className="space-y-4 text-center">
-                        <button
-                            onClick={handleGoogleLogin}
-                            className="md:w-full lg:w-1/2 mx-auto h-12 rounded-md bg-blue-500 flex gap-3 md:gap-5 items-center shadow-lg hover:scale-105">
-                            <span className="bg-white pl-4 h-full w-[46px] flex items-center rounded-l-md" > <FcGoogle /></span>
+                        <div className='space-y-2'>
+                            <div className="divider">OR</div>
+                            <h2 className='text-lg'>Login With</h2>
 
-                            <span className="text-white text-sm text-center px-3">Login With Google</span>
-                            <Toaster></Toaster>
-                        </button>
-                        <button
-                            onClick={handleFacebookLogin}
-                            className="md:w-full lg:w-1/2 mx-auto h-12 rounded-md bg-blue-400 flex gap-3 md:gap-5 items-center shadow-lg hover:scale-105">
-                            <span className="bg-white rounded-l-md pl-4 h-full w-[46px] flex items-center text-blue-500" > <FaFacebook></FaFacebook> </span>
-                            <span className="text-white text-sm text-center pr-3">Login With Facebook</span>
-                            <Toaster></Toaster>
-                        </button>
+                        </div>
+                        <div className='flex justify-center text-3xl gap-12'>
+                            <button
+                                onClick={handleGoogleLogin}
+                            >
+                                <FcGoogle></FcGoogle>
+                                <Toaster></Toaster>
+                            </button>
+                            <button
+                                onClick={handleFacebookLogin}
+                                className=''>
+                                <FaGithub />
+                                <Toaster></Toaster>
+                            </button>
+                        </div>
                         <p>Do not have an account? <Link to='/register' className="text-amber-500 ml-4">Register</Link></p>
                     </div>
 
