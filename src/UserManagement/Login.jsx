@@ -3,11 +3,14 @@ import { Helmet } from 'react-helmet-async';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaGithub, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth/cordova';
 
 const Login = () => {
+
+    const location = useLocation()
+    console.log(location)
 
     const { loginUser, loginWithGoogle } = useContext(AuthContext)
     const navigate = useNavigate();
@@ -25,6 +28,9 @@ const Login = () => {
                 console.log(result.user)
                 navigate('/')
                 toast.success('Successfully Logged in')
+
+                // navigate to userprofile
+                navigate(location?.state ? location.state : '/')
             })
             .catch((error) => {
                 console.error(error.message)
@@ -59,19 +65,20 @@ const Login = () => {
     }
     return (
         <div className='mt-12'>
-            <h1 className='text-3xl text-center font-bold'>Plese login</h1>
+            {
+                location?.state ?
+                    <div className='mb-4'>
+                        <p className="text-amber-500 text-center text-xl animate__animated animate__bounceInDown animate__delay-0.5s">You have to Login first to proceed</p>
+                    </div>
+                    : <></>
+            }
+            <h1 className=' text-3xl text-center font-bold'>Plese login</h1>
             <div>
                 <Helmet>
                     <title>DreamDwell | Login</title>
                 </Helmet>
                 <div className="px-2 md:w-1/2 lg:w-[35%] mx-auto mt-12 space-y-8">
-                    {
-                        location?.state ?
-                            <div>
-                                <p className="text-amber-500 text-center text-xl animate__animated animate__bounceIn animate__delay-0.5s">You have to Login first to proceed</p>
-                            </div>
-                            : <></>
-                    }
+
                     <form className="space-y-4" onSubmit={handleLogin}>
                         <label className="input input-bordered flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" /><path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" /></svg>
