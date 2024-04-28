@@ -17,9 +17,14 @@ import ValidateUser from './UserManagement/ValidateUser';
 import YourSpot from './YourSpotPage/YourSpot';
 import SpotDetail from './AllSpotPage/SpotDetail';
 import UpdateSpot from './YourSpotPage/UpdateSpot';
+import NotFound from './NotFound/NotFound';
 // import Test from './Components/test';
 
 const router = createBrowserRouter([
+  {
+    element: <Root />,
+    errorElement: <NotFound></NotFound>
+  },
   {
     path: "/",
     element: <Root></Root>,
@@ -60,7 +65,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        loader: ({params})=> fetch(`http://localhost:5000/spot/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`),
         element: <UpdateSpot></UpdateSpot>
       },
       {
