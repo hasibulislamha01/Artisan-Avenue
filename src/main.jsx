@@ -15,6 +15,7 @@ import AddSpot from './AddSpotPage/AddSpot';
 import AllSpot from './AllSpotPage/AllSpot';
 import ValidateUser from './UserManagement/ValidateUser';
 import YourSpot from './YourSpotPage/YourSpot';
+import SpotDetail from './AllSpotPage/SpotDetail';
 // import Test from './Components/test';
 
 const router = createBrowserRouter([
@@ -29,8 +30,25 @@ const router = createBrowserRouter([
 
       {
         path: "/allSpots",
+        loader: () => fetch('http://localhost:5000/spot'),
         element: <AllSpot></AllSpot>
       },
+
+      {
+        path: "/spot/:id",
+        loader: async ({ params }) => {
+          const response = await fetch(`http://localhost:5000/spot`)
+          const data = await response.json()
+
+          console.log(data, params)
+          return data;
+
+
+        },
+
+        element: <ValidateUser> <SpotDetail></SpotDetail> </ValidateUser>
+      },
+
       {
         path: "/addSpot",
         element: <ValidateUser> <AddSpot></AddSpot> </ValidateUser>
@@ -43,12 +61,12 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>
       },
-      
+
       {
         path: "/register",
         element: <Register></Register>
       }
-      
+
 
     ]
   },

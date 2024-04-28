@@ -1,10 +1,50 @@
+import toast, { Toaster } from "react-hot-toast";
 
 const AddSpot = () => {
+
+    const handleAddSpot = (e) => {
+        e.preventDefault()
+
+        const form = e.target;
+        const spotName = form.spotName.value;
+        const photo = form.photo.value;
+        const countryName = form.countryName.value;
+        const location = form.location.value;
+        const description = form.description.value;
+        const cost = form.cost.value;
+        const season = form.season.value;
+        const travelDuration = form.travelDuration.value;
+        const visitors = form.visitors.value;
+        const userName = form.userName.value;
+        const email = form.email.value;
+
+        const newSpot = { spotName, photo, countryName, location, description, cost, season, travelDuration, visitors, userName, email }
+        console.log('newspot' ,newSpot)
+
+        
+        // send data to database
+        fetch('http://localhost:5000/spot', {
+            method: "POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newSpot)
+        })
+        .then(res => res.json())
+        .then(data=> {
+            console.log(data);
+            if(data.insertedId){
+                toast.success('Spot added successfully')
+            }
+        })
+    }
+
     return (
         <div className="mt-12">
+            <Toaster></Toaster>
             <h1 className="text-center text-3xl font-medium">Add a new <span>Destination</span></h1>
 
-            <form className="w-2/5 mx-auto mt-6 space-y-3">
+            <form onSubmit={handleAddSpot} className="w-2/5 mx-auto mt-6 space-y-3">
                 <label className="input input-bordered flex items-center gap-2">
                     <input
                         type="text"
@@ -13,6 +53,14 @@ const AddSpot = () => {
                         required
                         placeholder="Spot Name" />
                 </label>
+                <label className="input input-bordered flex items-center gap-2">
+                        <input
+                            type="text"
+                            name="photo"
+                            className="grow"
+                            required
+                            placeholder="Photo URL" />
+                    </label>
                 <label className="input input-bordered flex items-center gap-2">
                     <input
                         type="text"
@@ -32,6 +80,7 @@ const AddSpot = () => {
 
                 <textarea
                     className="textarea textarea-lg textarea-bordered w-full"
+                    name="description"
                     placeholder="Give a short description of the spot">
                 </textarea>
 
