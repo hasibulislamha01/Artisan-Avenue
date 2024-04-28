@@ -11,15 +11,15 @@ const Feedback = () => {
                     <div className="space-y-1 text-sm">
                         <label className="cursor-pointer flex items-center gap-3">
                             <input type="checkbox" className="checkbox checkbox-warning" />
-                            <span>Baught a home</span>
+                            <span>Booked a Spot</span>
                         </label>
                         <label className="cursor-pointer flex items-center gap-3">
                             <input type="checkbox" className="checkbox checkbox-warning" />
-                            <span>Rent a home</span>
+                            <span>Booked a tour</span>
                         </label>
                         <label className="cursor-pointer flex items-center gap-3">
                             <input type="checkbox" className="checkbox checkbox-warning" />
-                            <span>Sold a home</span>
+                            <span>Rent a place</span>
                         </label>
                     </div>
                     <div className="mt-6">

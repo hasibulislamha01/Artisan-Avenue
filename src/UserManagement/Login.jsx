@@ -5,7 +5,7 @@ import { FaGithub, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth/cordova';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 

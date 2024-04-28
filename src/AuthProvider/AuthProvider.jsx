@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Authentication/firebase.config";
 import { createContext, useEffect, useState } from "react";
+import PropTypes from  'prop-types'
 
 
 export const AuthContext = createContext()
@@ -13,28 +14,34 @@ const AuthProvider = ({children}) => {
     const auth = getAuth(app);
     console.log(auth)
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(null);
 
     useEffect(()=> {
         onAuthStateChanged(auth, (currentUser) => {
             console.log('user in the auth state change',currentUser)
             if(currentUser){
                 setUser(currentUser)
+                setLoading(false);
             }
             else{
                 setUser(null)
+                setLoading(null);
             }
         } )
     }, [user])
 
     const registerUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const loginUser = ( email, password ) => {
+        setLoading(true)
         return signInWithEmailAndPassword( auth, email, password);
     }
 
     const updateUserProfile = (name, image) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name, 
             photoURL: image,
@@ -42,11 +49,13 @@ const AuthProvider = ({children}) => {
     }
 
     const loginWithGoogle = (provider) => {
+        setLoading(true)
         return signInWithPopup(auth, provider)
     }
 
 
     const logoutUser = () => {
+        setLoading(null)
         return signOut(auth)
     }
     
@@ -57,6 +66,7 @@ const AuthProvider = ({children}) => {
         logoutUser,
         loginWithGoogle,
         updateUserProfile,
+        loading,
         user,
     }
 
@@ -66,5 +76,9 @@ const AuthProvider = ({children}) => {
         </AuthContext.Provider>
     );
 };
+
+AuthProvider.propTypes = {
+    children: PropTypes.node
+}
 
 export default AuthProvider;
