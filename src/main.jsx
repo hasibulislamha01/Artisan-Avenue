@@ -16,6 +16,7 @@ import AllSpot from './AllSpotPage/AllSpot';
 import ValidateUser from './UserManagement/ValidateUser';
 import YourSpot from './YourSpotPage/YourSpot';
 import SpotDetail from './AllSpotPage/SpotDetail';
+import UpdateSpot from './YourSpotPage/UpdateSpot';
 // import Test from './Components/test';
 
 const router = createBrowserRouter([
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
       {
         path: "/myList",
         element: <ValidateUser> <YourSpot></YourSpot> </ValidateUser>
+      },
+      {
+        path: "/update/:id",
+        loader: ({params})=> fetch(`http://localhost:5000/spot/${params.id}`),
+        element: <UpdateSpot></UpdateSpot>
       },
       {
         path: "/login",

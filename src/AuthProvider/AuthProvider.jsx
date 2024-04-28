@@ -11,6 +11,7 @@ const AuthProvider = ({children}) => {
     // console.log(children)
     // Initialize Firebase Authentication and get a reference to the service
     const auth = getAuth(app);
+    console.log(auth)
     const [user, setUser] = useState(null);
 
     useEffect(()=> {

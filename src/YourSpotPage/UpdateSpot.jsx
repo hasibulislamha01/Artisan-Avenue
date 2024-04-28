@@ -1,0 +1,148 @@
+import toast, { Toaster } from "react-hot-toast";
+import { useLoaderData } from "react-router-dom";
+
+const UpdateSpot = () => {
+    const spot = useLoaderData()
+    console.log(spot)
+
+    const handleUpdateSpot = async (e) => {
+        e.preventDefault()
+
+        const form = e.target;
+        const spotName = form.spotName.value;
+        const photo = form.photo.value;
+        const countryName = form.countryName.value;
+        const location = form.location.value;
+        const description = form.description.value;
+        const cost = form.cost.value;
+        const season = form.season.value;
+        const travelDuration = form.travelDuration.value;
+        const visitors = form.visitors.value;
+        const userName = form.userName.value;
+        const email = form.email.value;
+
+        const updatedSpot = { spotName, photo, countryName, location, description, cost, season, travelDuration, visitors, userName, email }
+        console.log('Updatedspot', updatedSpot)
+
+
+        // send data to database
+        const response = await fetch(`http://localhost:5000/spot/${spot?._id}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedSpot)
+        })
+        const data = await response.json()
+        console.log(data);
+        if (data.insertedId) {
+            toast.success('Spot Updated successfully')
+        }
+
+    }
+
+
+    return (
+        <div className="mt-12">
+            <Toaster></Toaster>
+            <h1 className="text-center text-3xl font-medium">Update the spot  <span>{spot?.spotName}</span></h1>
+
+            <form onSubmit={handleUpdateSpot} className="w-2/5 mx-auto mt-6 space-y-3">
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="text"
+                        name="spotName"
+                        className="grow"
+                        required
+                        placeholder="Spot Name" />
+                </label>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="text"
+                        name="photo"
+                        className="grow"
+                        // required
+                        placeholder="Photo URL" />
+                </label>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="text"
+                        name="countryName"
+                        className="grow"
+                        required
+                        placeholder="Country Name" />
+                </label>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="text"
+                        name="location"
+                        className="grow"
+                        required
+                        placeholder="Location of the spot" />
+                </label>
+
+                <textarea
+                    className="textarea textarea-lg textarea-bordered w-full"
+                    name="description"
+                    placeholder="Give a short description of the spot">
+                </textarea>
+
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="number"
+                        name="cost"
+                        className="grow"
+                        required
+                        placeholder="Expected cost per trip    ($)" />
+                </label>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="text"
+                        name="season"
+                        className="grow"
+                        required
+                        placeholder="Best time to visit the destination" />
+                </label>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="number"
+                        name="travelDuration"
+                        className="grow"
+                        required
+                        placeholder="Expected no of days to complete the trip" />
+                </label>
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="number"
+                        name="visitors"
+                        className="grow"
+                        required
+                        placeholder="Average visitors per Year" />
+                </label>
+
+                <label className="input input-bordered flex items-center gap-2">
+                    <input
+                        type="text"
+                        name="userName"
+                        className="grow"
+                        required
+                        placeholder="Your Name" />
+                </label>
+
+                <label className="input input-bordered flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" /><path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" /></svg>
+                    <input
+                        type="email"
+                        name="email"
+                        className="grow"
+                        required
+                        placeholder="Email" />
+                </label>
+
+                <button className="btn btn-info" type="submit"> Add Spot </button>
+            </form>
+        </div>
+    );
+};
+
+export default UpdateSpot;
