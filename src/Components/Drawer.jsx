@@ -22,7 +22,7 @@ const Drawer = () => {
                 <IoIosLogIn></IoIosLogIn>
             </button>
             <SlidingMenu anchor="right" open={open} onClose={() => { setOpen(false) }}>
-                <Box p={2} width='300px' textAlign='center' role='presentation'>
+                <Box p={2} width='250px' textAlign='center' role='presentation'>
                     <Typography variant="h6" component='div'>
                         <div>
                             {
