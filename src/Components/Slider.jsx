@@ -1,82 +1,36 @@
-import Swiper from "swiper";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
-import { SwiperSlide } from "swiper/react";
 
 const Slider = () => {
     return (
-        <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            navigation
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-            spaceBetween={100}
-            slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-            className='swiper'
-        >
-            <SwiperSlide>
-                <div className='slide-1 slider-bg text-center text-white flex flex-col justify-center h-full '>
-                    <div className='lg:text-5xl font-semibold opacity-70 animate_animated animate__slideInRight animate__delay-0.5s'>
-                        <p className='mb-[-10px]'>Discover a place</p> <br />
-                        <p>you will love to live</p>
-                    </div>
-
+        <div className="carousel w-full">
+            <div id="slide1" className="carousel-item relative w-full">
+                <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" className="btn btn-circle">❮</a>
+                    <a href="#slide2" className="btn btn-circle">❯</a>
                 </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide-2 slider-bg text-center text-blue-100 opacity-90 flex flex-col justify-center h-full'>
-                    {/* <h1 className='lg:text-5xl font-semibold '>
-                        <p className=''>Discover a place</p> <br /> 
-                        <p>you will love to live</p>
-                    </h1> */}
-                    <p className='w-1/2 mx-auto text-2xl'>
-                        Your dream home with Dreamscape Residences, where luxury and comfort meet in every detail.
-                    </p>
+            </div>
+            <div id="slide2" className="carousel-item relative w-full">
+                <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" className="btn btn-circle">❮</a>
+                    <a href="#slide3" className="btn btn-circle">❯</a>
                 </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide-3 slider-bg text-center text-white flex flex-col justify-center h-full'>
-                    <h1 className='lg:text-3xl font-semibold w-1/2 mx-auto opacity-70'>
-                        Experience exceptional living with Dreamscape Residences
-                    </h1>
-
+            </div>
+            <div id="slide3" className="carousel-item relative w-full">
+                <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" className="btn btn-circle">❮</a>
+                    <a href="#slide4" className="btn btn-circle">❯</a>
                 </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide-4 slider-bg text-center text-white flex flex-col justify-center h-full'>
-                    <h1 className='lg:text-3xl w-1/2 mx-auto opacity-70 font-semibold '>
-                        <p className='mb-[-10px]'>
-                            Elevate your lifestyle with every detail of sophistication</p> <br />
-                        
-                    </h1>
-                    
+            </div>
+            <div id="slide4" className="carousel-item relative w-full">
+                <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" className="btn btn-circle">❮</a>
+                    <a href="#slide1" className="btn btn-circle">❯</a>
                 </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide-5 slider-bg text-center text-white flex flex-col justify-center h-full'>
-                    <h1 className='lg:text-5xl font-semibold '>
-                        <p className=''>Discover a place</p> <br />
-                        <p>you will love to live</p>
-                    </h1>
-                    <p className='w-1/2 mx-auto'>
-                        Welcome to DreamDwell, where luxury meets comfort in our meticulously designed residential buildings. Your dream home awaits.
-                    </p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slide-6 slider-bg text-center text-white flex flex-col justify-center h-full'>
-                    <h1 className='lg:text-5xl font-semibold '>
-                        <p className=''>Discover a place</p> <br />
-                        <p>you will love to live</p>
-                    </h1>
-                    <p className='w-1/2 mx-auto'>
-                        Welcome to DreamDwell, where luxury meets comfort in our meticulously designed residential buildings. Your dream home awaits.
-                    </p>
-                </div>
-            </SwiperSlide>
-
-        </Swiper>
+            </div>
+        </div>
     );
 };
 

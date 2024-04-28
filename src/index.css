@@ -6,3 +6,43 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
+
+.swiper {
+    width: auto;
+    height: 500px;
+    /* background-size: cover;
+    background-position: center; */
+}
+
+.parallax-bg {
+    background-image: url('topBanner.jpg');
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.slider-bg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-blend-mode: darken; */
+}
+.slide-1{
+    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("topBanner.jpg");
+    /* background-blend-mode: darken; */
+}
+.slide-2{
+    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-2.jpg");
+}
+.slide-3{
+    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-3.jpg");
+}
+.slide-4{
+    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-4.jpg");
+}
+.slide-5{
+    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-5.jpg");
+}
+.slide-6{
+    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-6.jpg");
+}
