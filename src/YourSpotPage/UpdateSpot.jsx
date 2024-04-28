@@ -61,7 +61,7 @@ const UpdateSpot = () => {
                         type="text"
                         name="photo"
                         className="grow"
-                        // required
+                        required
                         placeholder="Photo URL" />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
@@ -139,7 +139,7 @@ const UpdateSpot = () => {
                         placeholder="Email" />
                 </label>
 
-                <button className="btn btn-info" type="submit"> Add Spot </button>
+                <button className="btn btn-info" type="submit"> Update Spot </button>
             </form>
         </div>
     );

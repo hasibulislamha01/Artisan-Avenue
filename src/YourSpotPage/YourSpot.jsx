@@ -4,15 +4,17 @@ import YourSpotCard from "./YourSpotCard";
 
 const YourSpot = () => {
 
-    const {user} = useContext(AuthContext) || {}
+    // const [spot, setSpot] = useState()
+
+    const { user } = useContext(AuthContext) || {}
     const [mySpot, setMySpot] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`http://localhost:5000/mySpot/${user?.email}`)
-        .then(res => res.json())
-        .then(data => setMySpot(data))
+            .then(res => res.json())
+            .then(data => setMySpot(data))
 
-    },[user])
+    }, [user])
 
 
     return (
@@ -20,7 +22,15 @@ const YourSpot = () => {
             <h1 className="text-center text-3xl">Your Spots</h1>
             <div>
                 {
-                    mySpot.map(mySingleSpot => <YourSpotCard key={mySingleSpot._id} mySingleSpot={mySingleSpot}></YourSpotCard>)
+                    mySpot.map(mySingleSpot =>
+                        <YourSpotCard
+                            key={mySingleSpot._id}
+                            mySingleSpot={mySingleSpot}
+                            mySpot={mySpot}
+                            setMySpot={setMySpot}
+                        >
+
+                        </YourSpotCard>)
                 }
             </div>
         </div>

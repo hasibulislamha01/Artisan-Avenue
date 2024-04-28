@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
-const YourSpotCard = ({ mySingleSpot }) => {
+const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
     console.log(mySingleSpot)
 
     const handleDelete = (id) => {
@@ -37,7 +37,8 @@ const YourSpotCard = ({ mySingleSpot }) => {
                                 text: "Your Spot has been deleted.",
                                 icon: "success"
                             });
-
+                            const remaining = mySpot.filter( spot=> spot._id !== mySingleSpot?._id )
+                            setMySpot(remaining)
                         }
                     })
             }
