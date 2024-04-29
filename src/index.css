@@ -1,6 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.styled-font{
+    font-family: "Great Vibes", cursive;
+
+}
+
 
 .bg-blur{
     backdrop-filter: blur(5px);

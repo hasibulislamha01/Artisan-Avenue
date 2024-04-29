@@ -19,7 +19,7 @@ const YourSpot = () => {
 
     return (
         <div>
-            <h1 className="text-center text-3xl">Your Spots</h1>
+            <h1 className="text-center text-3xl mt-12">Your Crafts</h1>
             <div>
                 {
                     mySpot.map(mySingleSpot =>

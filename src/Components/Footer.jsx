@@ -1,16 +1,16 @@
 
 const Footer = () => {
     return (
-        <footer className="mt-6 md:mt-12 lg:mt-32 footer footer-center p-10 bg-primary text-primary-content">
+        <footer className="mt-6 md:mt-12 lg:mt-32 footer footer-center p-10 bg-[#FFD1DC] text-gray-600">
             <aside>
-                <h1 className="text-3xl">TrustTravel</h1>
+                <h1 className="text-5xl styled-font">Artisan Avenue</h1>
                 <p className="font-bold">
-                    Providing reliable services since 1992
+                    Asthetic artistic design with modern art theory
                 </p>
                 <p>Copyright © 2024 - All right reserved</p>
                 <div>
                     <h1>Contact us:</h1>
-                    <p>trusttravel@gmail.com</p>
+                    <p>artisanavenue@gmail.com</p>
                 </div>
             </aside>
 

@@ -1,48 +1,71 @@
 import toast, { Toaster } from "react-hot-toast";
+import Select from 'react-select'
 
 const AddSpot = () => {
+
+    const customizeOpt = [
+        {value: 'true', label: 'Customizable'},
+        {value: 'false', label: 'Not Customizable'},
+    ]
+    const stockOpt = [
+        {value: 'true', label: 'In Stock'},
+        {value: 'false', label: 'Out of Stock'},
+    ]
+    const ratingOpt = [
+        {value: '0', label: '0'},
+        {value: '0.5', label: '0.5'},
+        {value: '1', label: '1'},
+        {value: '1.5', label: '1.5'},
+        {value: '2', label: '2'},
+        {value: '2.5', label: '2.5'},
+        {value: '3', label: '3'},
+        {value: '3.5', label: '3.5'},
+        {value: '4', label: '4'},
+        {value: '4.5', label: '4.5'},
+        {value: '5', label: '5'},
+    ]
 
     const handleAddSpot = (e) => {
         e.preventDefault()
 
         const form = e.target;
-        const spotName = form.spotName.value;
+        const craftName = form.spotName.value;
         const photo = form.photo.value;
-        const countryName = form.countryName.value;
-        const location = form.location.value;
+        const subCategoryName = form.countryName.value;
+        const rating = form.location.value;
         const description = form.description.value;
         const cost = form.cost.value;
-        const season = form.season.value;
-        const travelDuration = form.travelDuration.value;
-        const visitors = form.visitors.value;
+        const customizable = form.season.value;
+        const processingTime = form.travelDuration.value;
+        const inStock = form.visitors.value;
         const userName = form.userName.value;
         const email = form.email.value;
 
-        const newSpot = { spotName, photo, countryName, location, description, cost, season, travelDuration, visitors, userName, email }
-        console.log('newspot' ,newSpot)
+        const newCraft = { spotName: craftName, photo, countryName: subCategoryName, location: rating, description, cost, customizable, travelDuration: processingTime, inStock, userName, email }
+        console.log('newCraft', newCraft)
 
-        
+
         // send data to database
         fetch('http://localhost:5000/spot', {
             method: "POST",
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(newSpot)
+            body: JSON.stringify(newCraft)
         })
-        .then(res => res.json())
-        .then(data=> {
-            console.log(data);
-            if(data.insertedId){
-                toast.success('Spot added successfully')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success('Spot added successfully')
+                }
+            })
     }
 
     return (
         <div className="mt-12">
             <Toaster></Toaster>
-            <h1 className="text-center text-3xl font-medium">Add a new <span>Destination</span></h1>
+            <h1 className="text-center text-3xl font-medium">Add a new <span>Craft</span></h1>
 
             <form onSubmit={handleAddSpot} className="w-2/5 mx-auto mt-6 space-y-3">
                 <label className="input input-bordered flex items-center gap-2">
@@ -51,37 +74,35 @@ const AddSpot = () => {
                         name="spotName"
                         className="grow"
                         required
-                        placeholder="Spot Name" />
+                        placeholder="Craft Name" />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
-                        <input
-                            type="text"
-                            name="photo"
-                            className="grow"
-                            required
-                            placeholder="Photo URL" />
-                    </label>
+                    <input
+                        type="text"
+                        name="photo"
+                        className="grow"
+                        required
+                        placeholder="Photo URL of the craft" />
+                </label>
                 <label className="input input-bordered flex items-center gap-2">
                     <input
                         type="text"
                         name="countryName"
                         className="grow"
                         required
-                        placeholder="Country Name" />
+                        placeholder="Subcategory Name" />
                 </label>
-                <label className="input input-bordered flex items-center gap-2">
-                    <input
-                        type="text"
-                        name="location"
-                        className="grow"
-                        required
-                        placeholder="Location of the spot" />
-                </label>
+
+                <Select
+                    options={ratingOpt}
+                    placeholder='Rating of the craft'
+                    name="location"
+                ></Select>
 
                 <textarea
                     className="textarea textarea-lg textarea-bordered w-full"
                     name="description"
-                    placeholder="Give a short description of the spot">
+                    placeholder="Give a short description of the craft">
                 </textarea>
 
                 <label className="input input-bordered flex items-center gap-2">
@@ -90,32 +111,30 @@ const AddSpot = () => {
                         name="cost"
                         className="grow"
                         required
-                        placeholder="Expected cost per trip    ($)" />
+                        placeholder="Cost of the Craft" />
                 </label>
-                <label className="input input-bordered flex items-center gap-2">
-                    <input
-                        type="text"
-                        name="season"
-                        className="grow"
-                        required
-                        placeholder="Best time to visit the destination" />
-                </label>
+
+                <Select
+                    options={customizeOpt}
+                    placeholder='Is the craft customizable ?'
+                    name="season"
+                ></Select>
+                
+
                 <label className="input input-bordered flex items-center gap-2">
                     <input
                         type="number"
                         name="travelDuration"
                         className="grow"
                         required
-                        placeholder="Expected no of days to complete the trip" />
+                        placeholder="Expected time for processing (hours)" />
                 </label>
-                <label className="input input-bordered flex items-center gap-2">
-                    <input
-                        type="number"
-                        name="visitors"
-                        className="grow"
-                        required
-                        placeholder="Average visitors per Year" />
-                </label>
+
+                <Select
+                    options={stockOpt}
+                    placeholder='Is the craft in stock ?'
+                    name="visitors"
+                ></Select>
 
                 <label className="input input-bordered flex items-center gap-2">
                     <input

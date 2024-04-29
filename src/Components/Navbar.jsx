@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="w-full bg-[#005C97] bg-opacity-75 sticky bg-blur">
+        <div className="w-full bg-gray-600 bg-opacity-75 sticky bg-blur">
             <Toaster></Toaster>
             <nav className="navbar container mx-auto">
                 <div className="navbar-start">
@@ -35,7 +35,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost text-xl text-[#FFD700]"> <span>Trust</span><span>Travel</span></Link>
+                    <Link className="btn btn-ghost text-xl text-[#FFD700]"> <span>Artisan</span><span>Avenue</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-xl font-semibold w-full flex gap-6">
@@ -52,7 +52,7 @@ const Navbar = () => {
                             {
                                 user ?
                                     <div className="tooltip tooltip-bottom" data-tip={userName}>
-                                        <img className="w-14 h-14 rounded-full" src={userImage} alt="" />
+                                        <img className="w-14 h-14 rounded-full z-50" src={userImage} alt="" />
                                     </div>
                                     :
                                     <></>

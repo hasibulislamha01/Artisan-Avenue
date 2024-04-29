@@ -40,13 +40,15 @@ const Register = () => {
                 .then((result) => {
                     console.log(result.user)
                     console.log('Successfull:', userName, userPhoto, email, password)
-                    updateUserProfile(userName, userPhoto)
+
+                    userPhoto && updateUserProfile(userName, userPhoto)
                     .then(()=> {
                         console.log('updating')
                     })
                     .catch((error)=> {
                         console.error('failed to update user',error.message)
                     })
+                    
                     loginUser(email, password)
                     navigate('/')
                     location.reload()

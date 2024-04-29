@@ -18,6 +18,8 @@ import YourSpot from './YourSpotPage/YourSpot';
 import SpotDetail from './AllSpotPage/SpotDetail';
 import UpdateSpot from './YourSpotPage/UpdateSpot';
 import NotFound from './NotFound/NotFound';
+import AddCountries from './Components/AddCountries';
+import Countries from './Components/Countries';
 // import Test from './Components/test';
 
 const router = createBrowserRouter([
@@ -59,6 +61,16 @@ const router = createBrowserRouter([
       {
         path: "/addSpot",
         element: <ValidateUser> <AddSpot></AddSpot> </ValidateUser>
+      },
+
+      {
+        path: "/addCountries",
+        element: <AddCountries></AddCountries>
+      },
+
+      {
+        path: "/countries",
+        element: <Countries></Countries>
       },
       {
         path: "/myList",

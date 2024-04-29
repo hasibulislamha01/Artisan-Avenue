@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
+// import PropTypes from 'prop-types'
 
 const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
-    console.log(mySingleSpot)
+    console.log('from your spot card', mySingleSpot)
 
     const handleDelete = (id) => {
         console.log('deleting', id)
@@ -37,7 +38,7 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
                                 text: "Your Spot has been deleted.",
                                 icon: "success"
                             });
-                            const remaining = mySpot.filter( spot=> spot._id !== mySingleSpot?._id )
+                            const remaining = mySpot.filter(spot => spot._id !== mySingleSpot?._id)
                             setMySpot(remaining)
                         }
                     })
@@ -51,14 +52,30 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
             </div>
             <div className="space-y-6 text-center">
                 <div className="space-y-2">
-                    <h1 className="text-2xl font-medium text-center">About the place</h1>
-                    <p className="w-[90%] mx-auto text-lg">
+                    <h1 className="text-2xl font-medium text-center">{mySingleSpot?.spotName}</h1>
+                    <hr className='mb-2 mx-auto w-3/5' />
+                            <h2 className="text-lg">Rating: {mySingleSpot?.location}</h2>
+                    <p className="w-[85%] mx-auto text-lg">
                         {mySingleSpot?.description}
                     </p>
                 </div>
                 <div className="space-y-3">
-                    <h2 className="text-lg">On average {mySingleSpot?.visitors} visit the place in a calender year.</h2>
-                    <h3 className="text-lg">Expected cost per trip per head: {mySingleSpot?.cost} $ </h3>
+                    <div className='flex items-center justify-around'>
+                        <div>
+                            {
+                                mySingleSpot?.customizable ?
+                                    <p>Customizable</p>
+                                    : <p>Not Customizable</p>
+                            }
+                        </div>
+                        <div>
+                            {
+                                mySingleSpot?.inStock ?
+                                    <p>In stock</p>
+                                    : <p>Out of stock</p>
+                            }
+                        </div>
+                    </div>
                 </div>
                 <div className="flex justify-center gap-10">
                     <Link to={`/update/${mySingleSpot?._id}`} className="btn btn-sm btn-warning w-1/3">Update</Link>
@@ -70,7 +87,9 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
 };
 
 YourSpotCard.propTypes = {
-    mySingleSpot: PropTypes.object
+    mySingleSpot: PropTypes.object,
+    mySpot: PropTypes.array,
+    setMySpot: PropTypes.array
 }
 
 export default YourSpotCard;

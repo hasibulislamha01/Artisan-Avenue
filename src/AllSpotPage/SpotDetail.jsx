@@ -40,6 +40,7 @@ const SpotDetail = () => {
                     <h3 className="text-xl">Expected cost per trip per head: {spot?.cost} $ </h3>
                 </div>
             </div>
+            <p>added by: {spot?.email}</p>
         </div>
     );
 };
