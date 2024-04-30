@@ -5,8 +5,11 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const Drawer = () => {
+
     const { user, logoutUser } = useContext(AuthContext)
     const [open, setOpen] = useState(false);
+    const image = user?.photoURL;
+    console.log(image)
 
     const [theme, setTheme] = useState('light')
 
@@ -43,6 +46,7 @@ const Drawer = () => {
                 <Box p={0} margin='50px 0px' width='250px' textAlign='center' role='presentation'>
                     <Typography variant="h6" style={{ fontFamily: "Dosis", fontWeight: '500' }} component='div'>
                         <div className="flex flex-col gap-6 px-2">
+                            <img className="w-1/2 mx-auto" src={image} alt="" />
                             <div className="flex justify-center items-center gap-2 mx-auto hover:text-warning hover:bg-[#005C97] hover:bg-opacity-90 rounded-xl w-full py-1">
                                 <h1>Change Theme</h1>
                                 <label className="swap swap-rotate">
