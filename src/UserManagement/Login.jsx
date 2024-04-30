@@ -7,13 +7,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { Bounce } from 'react-awesome-reveal';
+import { GithubAuthProvider } from 'firebase/auth/cordova';
 
 const Login = () => {
 
     const location = useLocation()
     console.log(location)
 
-    const { loginUser, loginWithGoogle } = useContext(AuthContext)
+    const { loginUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
@@ -57,9 +58,23 @@ const Login = () => {
             })
     }
 
+    const githubProvider = new GithubAuthProvider()
     const handleFacebookLogin = () => {
-        console.log('logging in with facebook')
+        loginWithGithub(githubProvider)
+        .then((result) => {
+            console.log(result.user)
+            toast.success("Successfully Logged In")
+
+            // navigate to userprofile
+            navigate(location?.state ? location.state : '/')
+        })
+        .catch((error) => {
+            console.log(error.message)
+            console.log(error.code)
+            toast.error(error.message)
+        })
     }
+    
     // toggle show password
     const [showPassword, setShowpassword] = useState(false);
     const togglePasswordView = () => {
@@ -79,7 +94,7 @@ const Login = () => {
             <h1 className=' text-3xl text-center font-bold'>Plese login</h1>
             <div>
                 <Helmet>
-                    <title>DreamDwell | Login</title>
+                    <title>Artisan Avenue | Login</title>
                 </Helmet>
                 <div className="px-2 md:w-1/2 lg:w-[35%] mx-auto mt-12 space-y-8">
 
