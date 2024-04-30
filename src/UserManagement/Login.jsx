@@ -6,6 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { Bounce } from 'react-awesome-reveal';
 
 const Login = () => {
 
@@ -69,7 +70,9 @@ const Login = () => {
             {
                 location?.state ?
                     <div className='mb-4'>
-                        <p className="text-amber-500 text-center text-xl animate__animated animate__bounceInDown animate__delay-0.5s">You have to Login first to proceed</p>
+                        <Bounce>
+                            <p className="text-amber-500 text-center text-xl">You have to Login first to proceed</p>
+                        </Bounce>
                     </div>
                     : <></>
             }

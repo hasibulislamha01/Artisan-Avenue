@@ -15,7 +15,7 @@ const Home = () => {
         <div className="container mx-auto mt-12">
             <Slider></Slider>
             <section className="mt-12 md:mt-20">
-                <h1 className="text-3xl text-center mb-6">All Spots</h1>
+                <h1 className="text-3xl text-center mb-6">All Arts</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
                         spots.map(spot => <SpotCard key={spot._id} spot={spot}></SpotCard>)
