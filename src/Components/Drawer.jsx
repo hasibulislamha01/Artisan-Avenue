@@ -43,7 +43,7 @@ const Drawer = () => {
                 <Box p={0} margin='50px 0px' width='250px' textAlign='center' role='presentation'>
                     <Typography variant="h6" style={{ fontFamily: "Dosis", fontWeight: '500' }} component='div'>
                         <div className="flex flex-col gap-6 px-2">
-                            <div className="flex justify-center items-center gap-2 mx-auto hover:text-warning hover:bg-[#005C97] hover:bg-opacity-90 rounded-xl w-full">
+                            <div className="flex justify-center items-center gap-2 mx-auto hover:text-warning hover:bg-[#005C97] hover:bg-opacity-90 rounded-xl w-full py-1">
                                 <h1>Change Theme</h1>
                                 <label className="swap swap-rotate">
 
@@ -61,12 +61,12 @@ const Drawer = () => {
                             {
                                 !user ?
                                     <div className="flex flex-col gap-4">
-                                        <Link to='/login' className="text-xl font-semibold text-center hover:text-warning hover:bg-[#005C97] hover:bg-opacity-90 rounded-xl">Login</Link>
-                                        <Link to='/register' className="text-xl text-center font-semibold hover:text-warning hover:bg-[#005C97] rounded-xl">Register</Link>
+                                        <Link to='/login' className="text-xl font-semibold text-center hover:text-warning hover:bg-[#005C97] hover:bg-opacity-90 rounded-xl py-1">Login</Link>
+                                        <Link to='/register' className="text-xl text-center font-semibold hover:text-warning hover:bg-[#005C97] rounded-xl py-1">Register</Link>
                                     </div>
                                     :
                                     <div>
-                                        <button className="btn" onClick={handleLogout}>Logout</button>
+                                        <button className="w-full text-xl font-semibold text-center hover:text-warning hover:bg-[#005C97] hover:bg-opacity-90 rounded-xl py-1" onClick={handleLogout}>Logout</button>
                                     </div>
                             }
                         </div>
