@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,6 +10,9 @@
 .styled-font{
     font-family: "Great Vibes", cursive;
 
+}
+.platypi{
+    font-family: "Dosis", sans-serif;
 }
 
 

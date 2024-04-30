@@ -1,8 +1,10 @@
 import toast, { Toaster } from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Select from 'react-select'
 
 const UpdateSpot = () => {
+
+    const navigate = useNavigate();
     const spot = useLoaderData()
     console.log(spot)
 
@@ -35,11 +37,22 @@ const UpdateSpot = () => {
             body: JSON.stringify(updatedCraft)
         })
         const data = await response.json()
-        // console.log(data);
-        if (data.insertedId) {
-            toast.success('Updated successfully')
+        // toast.success
+        console.log(data);
+        if (data.modifiedCount) {
+            toast.success('Craft Updated successfully')
+            // finalCommand()
+        }
+        else{
+            toast.error('You have changed nothing about the craft')
         }
 
+        
+
+    }
+
+    const finalCommand = () => {
+        navigate('/')
     }
 
     const customizeOpt = [

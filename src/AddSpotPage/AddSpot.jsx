@@ -67,7 +67,7 @@ const AddSpot = () => {
             <Toaster></Toaster>
             <h1 className="text-center text-3xl font-medium">Add a new <span>Craft</span></h1>
 
-            <form onSubmit={handleAddSpot} className="w-2/5 mx-auto mt-6 space-y-3">
+            <form onSubmit={handleAddSpot} className="w-4/5 md:W-3/5 lg:w-2/5 mx-auto mt-6 space-y-3 flex flex-col justify-center">
                 <label className="input input-bordered flex items-center gap-2">
                     <input
                         type="text"
@@ -155,7 +155,7 @@ const AddSpot = () => {
                         placeholder="Email" />
                 </label>
 
-                <button className="btn btn-info" type="submit"> Add Spot </button>
+                <button className=" btn btn-info w-full md:w-1/2 lg:w-3/5 mx-auto" type="submit"> Add Spot </button>
             </form>
         </div>
     );

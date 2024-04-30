@@ -15,7 +15,7 @@ const SpotCard = ({ spot }) => {
                     <p>Rating: <span>{spot?.location}</span> </p>
                     <div>
                         {
-                            spot?.customizable ?
+                            JSON.parse(spot?.customizable) === true ?
                             <p>Customizable</p>
                             : <p>Not Customizable</p>
                         }

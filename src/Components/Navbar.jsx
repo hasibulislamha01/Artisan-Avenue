@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <div className="w-full bg-gray-600 bg-opacity-75 sticky bg-blur">
             <Toaster></Toaster>
-            <nav className="navbar container mx-auto">
+            <nav className="navbar container mx-auto platypi font-bold">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,9 +23,9 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52  text-lg font-semibold">
                             <NavLink to='/' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#A0A0A0]'}>Home</NavLink>
-                            <NavLink to='/allSpots' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-gray-400'}>Browse Spots</NavLink>
-                            <NavLink to='/addSpot' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-gray-400'}>Add Spots</NavLink>
-                            <NavLink to='/myList' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-gray-400'}>Your Spots</NavLink>
+                            <NavLink to='/allSpots' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-gray-400'}>Browse Arts</NavLink>
+                            <NavLink to='/addSpot' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-gray-400'}>Add Arts</NavLink>
+                            <NavLink to='/myList' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-gray-400'}>Your Arts</NavLink>
                             <li className="text-lg">
                                 <p className="text-lg">SignUp</p>
                                 <ul className="p-2 flex flex-col">
@@ -40,9 +40,9 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-xl font-semibold w-full flex gap-6">
                         <NavLink to='/' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#CCCCCC]'}>Home</NavLink>
-                        <NavLink to='/allSpots' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#CCCCCC]'}>Browse Spots</NavLink>
-                        <NavLink to='/addSpot' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#CCCCCC]'}>Add Spots</NavLink>
-                        <NavLink to='/myList' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#CCCCCC]'}>Your Spots</NavLink>
+                        <NavLink to='/allSpots' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#CCCCCC]'}>Browse Arts</NavLink>
+                        <NavLink to='/addSpot' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#CCCCCC]'}>Add Art</NavLink>
+                        <NavLink to='/myList' className={({ isActive }) => isActive ? 'text-[#FFD662]' : 'text-[#CCCCCC]'}>Your Art</NavLink>
 
                     </ul>
                 </div>

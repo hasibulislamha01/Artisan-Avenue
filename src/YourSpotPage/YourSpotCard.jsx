@@ -46,9 +46,9 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
         });
     }
     return (
-        <div className="container mx-auto mt-12 flex justify-around items-center">
-            <div>
-                <img className='max-w-[500px]' src={mySingleSpot?.photo} alt="" />
+        <div className="my-12 flex flex-col lg:flex-row gap-6 lg:gap-0 justify-around items-center">
+            <div className=' lg:w-full'>
+                <img className='w-full lg:min-w-[500px]' src={mySingleSpot?.photo} alt="" />
             </div>
             <div className="space-y-6 text-center">
                 <div className="space-y-2">
@@ -63,7 +63,7 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
                     <div className='flex items-center justify-around'>
                         <div>
                             {
-                                mySingleSpot?.customizable ?
+                                JSON.parse(mySingleSpot?.customizable) === true ?
                                     <p>Customizable</p>
                                     : <p>Not Customizable</p>
                             }

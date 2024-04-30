@@ -10,7 +10,7 @@ const SpotDetail = () => {
     return (
         <div className="container mx-auto mt-12 text-center">
             <div>
-                <img src={spot?.photo} alt="" />
+                <img className="w-full mx-auto" src={spot?.photo} alt="" />
             </div>
             <div className="mt-6 space-y-6">
                 <div className="space-y-2">

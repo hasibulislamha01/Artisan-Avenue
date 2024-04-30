@@ -1,24 +1,46 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import SpotCard from "./SpotCard";
+import { useState } from "react";
 
 const AllSpot = () => {
     const touristSpots = useLoaderData()
-    // console.log(touristSpots)
+    console.log(touristSpots)
+
+
+
 
     return (
-        <div className="container mx-auto">
-            <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn m-1">Sort by</div>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                </ul>
-            </div>
-            <h1>All spots here</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {
-                    touristSpots.map(spot => <SpotCard key={spot._id} spot={spot}></SpotCard>)
-                }
+        <div className="container mx-auto mt-12">
+
+            <h1 className="text-center text-3xl font-semibold styled-font my-3 text-rose-400">All spots here</h1>
+            <div className="">
+                <div className="overflow-x-auto">
+                    <table className="table table-zebra">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>Art Name</th>
+                                <th>Art Category</th>
+                                <th>Availability</th>
+                                <th>Price</th>
+                                <th>Details Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                touristSpots.map(art =>
+                                    <tr key={art?._id}>
+                                        <td>{art?.spotName}</td>
+                                        <td>{art?.countryName}</td>
+                                        {art?.inStock ? <td>In Stock</td> : <td>Out of Stock</td>}
+                                        <td>{art?.cost}</td>
+                                        <td> <Link to={`/spot/${art._id}`} className="btn bg-rose-200 btn-sm">View Details</Link></td>
+                                    </tr>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
     );
