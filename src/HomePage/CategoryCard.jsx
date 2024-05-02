@@ -12,7 +12,7 @@ const CategoryCard = ({ category }) => {
                 <h2 className="card-title text-sky-400">{category?.subCategory}</h2>
                 <p>{category?.line}</p>
                 <div className="card-actions">
-                    <Link to={`/allCategories/${subCategoryId}`} className="mt-4 btn w-4/5 mx-auto bg-sky-300">Similar Paintings</Link>
+                    <Link to={`/allCategories/${subCategoryId}`} className="mt-4 btn w-4/5 mx-auto bg-sky-200">Similar Paintings</Link>
                 </div>
             </div>
         </div>
