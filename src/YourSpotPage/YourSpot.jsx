@@ -17,7 +17,7 @@ const YourSpot = () => {
     }, [user])
 
     const [search, setSearch] = useState('')
-    console.log(search)
+    console.log('search value is :',search)
     mySpot?.map(spot => console.log(spot?.customizable))
 
 
