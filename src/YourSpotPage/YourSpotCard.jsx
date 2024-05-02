@@ -48,7 +48,7 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
     return (
         <div className="my-12 flex flex-col lg:flex-row gap-6 lg:gap-0 justify-around items-center">
             <div className=' lg:w-full'>
-                <img className='w-full lg:min-w-[500px]' src={mySingleSpot?.photo} alt="" />
+                <img className='w-full lg:max-w-[500px]' src={mySingleSpot?.photo} alt="" />
             </div>
             <div className="space-y-6 text-center">
                 <div className="space-y-2">

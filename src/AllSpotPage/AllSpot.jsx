@@ -30,7 +30,7 @@ const AllSpot = () => {
                             {
                                 touristSpots.map(art =>
                                     <tr key={art?._id}>
-                                        <td>{art?.spotName}</td>
+                                        <td>{art?.craftName ||art?.spotName}</td>
                                         <td>{art?.countryName}</td>
                                         {art?.inStock ? <td>In Stock</td> : <td>Out of Stock</td>}
                                         <td>{art?.cost}</td>

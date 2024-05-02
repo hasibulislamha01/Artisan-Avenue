@@ -8,7 +8,7 @@ const SpotCard = ({ spot }) => {
         <div className="card bg-base-100 shadow-xl">
             <figure><img className="h-[200px] w-full" src={spot?.photo} alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{spot?.spotName}</h2>
+                <h2 className="card-title">{spot?.craftName ||spot?.spotName}</h2>
                 <h6>{spot?.countryName}</h6>
                 <hr className='border-b-[1px] border-blue-200 w-full mx-auto' />
                 <div className='space-y-2 mt-4'>
