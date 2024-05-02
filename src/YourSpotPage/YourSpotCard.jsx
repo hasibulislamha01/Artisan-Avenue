@@ -52,7 +52,7 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
             </div>
             <div className="space-y-6 text-center">
                 <div className="space-y-2">
-                    <h1 className="text-2xl font-medium text-center">{mySingleSpot?.spotName}</h1>
+                    <h1 className="text-2xl font-medium text-center">{ mySingleSpot?.craftName || mySingleSpot?.spotName}</h1>
                     <hr className='mb-2 mx-auto w-3/5' />
                             <h2 className="text-lg">Rating: {mySingleSpot?.location}</h2>
                     <p className="w-[85%] mx-auto text-lg">
