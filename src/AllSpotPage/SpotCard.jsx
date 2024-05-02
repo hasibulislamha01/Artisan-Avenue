@@ -29,7 +29,7 @@ const SpotCard = ({ spot }) => {
                     </div>
                 </div>
                 <div className="card-action w-4/5 mx-auto">
-                    <Link to={`/spot/${spot._id}`} className="btn bg-sky-200 w-full">View Details</Link>
+                    <Link to={`/spot/${spot._id}`} className="btn bg-sky-300 w-full">View Details</Link>
                 </div>
             </div>
         </div>
