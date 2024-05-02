@@ -48,10 +48,10 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
     return (
         <div className="my-12 flex flex-col lg:flex-row gap-6 lg:gap-0 justify-around items-center">
             <div className=' lg:w-full'>
-                <img className='w-full lg:max-w-[500px]' src={mySingleSpot?.photo} alt="" />
+                <img className='w-full lg:w-[500px]' src={mySingleSpot?.photo} alt="" />
             </div>
             <div className="space-y-6 text-center  platypi">
-                <div className="space-y-2">
+                <div className="space-y-2 lg:w-[500px]">
                     <h1 className="text-2xl font-medium text-center text-sky-400">{ mySingleSpot?.craftName || mySingleSpot?.spotName}</h1>
                     <hr className='mb-2 mx-auto w-3/5' />
                             <h2 className="text-lg">Rating: {mySingleSpot?.location}</h2>
