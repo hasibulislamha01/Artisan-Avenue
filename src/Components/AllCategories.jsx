@@ -29,10 +29,10 @@ const AllCategories = () => {
 
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto pb-12 lg:pb-32'>
             <h1 className='text-center text-3xl lg:text-7xl styled-font text-rose-300 mt-8 mb-2
             '>{subCategory}</h1>
-            <div>
+            <div className='space-y-6'>
                 {
                    homologous?.map(item=> <SingleCategories key={item._id} item={item}></SingleCategories>)
                 }
