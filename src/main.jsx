@@ -34,20 +34,20 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch('http://localhost:5000/spot'),
+        loader: () => fetch('https://a-10-travel-site-server.vercel.app/spot'),
         element: <Home></Home>
       },
 
       {
         path: "/allSpots",
-        loader: () => fetch('http://localhost:5000/spot'),
+        loader: () => fetch('https://a-10-travel-site-server.vercel.app/spot'),
         element: <AllSpot></AllSpot>
       },
 
       {
         path: "/spot/:id",
         loader: async ({ params }) => {
-          const response = await fetch(`http://localhost:5000/spot`)
+          const response = await fetch(`https://a-10-travel-site-server.vercel.app/spot`)
           const data = await response.json()
 
           console.log(data, params)
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`),
+        loader: ({ params }) => fetch(`https://a-10-travel-site-server.vercel.app/spot/${params.id}`),
         element: <UpdateSpot></UpdateSpot>
       },
       {
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
 
       {
         path: "/allCategories/:subCategoryId",
-        loader: ({params})=>fetch(`http://localhost:5000/categories`), 
+        loader: ({params})=>fetch(`https://a-10-travel-site-server.vercel.app/categories`), 
         element: <AllCategories></AllCategories>
       },
 

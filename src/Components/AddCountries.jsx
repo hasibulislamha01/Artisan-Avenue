@@ -15,7 +15,7 @@ const AddCountries = () => {
 
 
         // add countries to database
-        fetch('http://localhost:5000/countries',{
+        fetch('https://a-10-travel-site-server.vercel.app/countries',{
             method: "POST",
             headers: {
                 'content-type' : 'application/json'

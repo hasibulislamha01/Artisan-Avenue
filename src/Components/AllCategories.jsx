@@ -14,7 +14,7 @@ const AllCategories = () => {
     // const response = await fetch('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/spot`)
+        fetch(`https://a-10-travel-site-server.vercel.app/spot`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

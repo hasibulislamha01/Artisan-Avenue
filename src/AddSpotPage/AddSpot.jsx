@@ -46,7 +46,7 @@ const AddSpot = () => {
 
 
         // send data to database
-        fetch('http://localhost:5000/spot', {
+        fetch('https://a-10-travel-site-server.vercel.app/spot', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
