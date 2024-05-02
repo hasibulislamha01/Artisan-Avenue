@@ -11,17 +11,18 @@ const ValidateUser = ({children}) => {
     const {user, loading} = useContext(AuthContext)
     console.log(user)
 
-    if(user){
-        return children;
-    }
-
-    else if(loading){
-        return(
+    if(loading){
+        return (
             <div className="mt-12 md:mt-20 flex justify-center items-center">
                 <div className="w-40 mx-auto loading loading-spinner text-warning"></div>  
             </div>
-        ) 
+        )
     }
+
+    else if(user){
+        return children;
+    }
+
     
     return (
         <div>

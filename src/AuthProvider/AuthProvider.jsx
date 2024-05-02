@@ -14,7 +14,7 @@ const AuthProvider = ({children}) => {
     const auth = getAuth(app);
     console.log(auth)
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=> {
         onAuthStateChanged(auth, (currentUser) => {
@@ -60,7 +60,7 @@ const AuthProvider = ({children}) => {
 
 
     const logoutUser = () => {
-        setLoading(null)
+        setLoading(true)
         return signOut(auth)
     }
     
