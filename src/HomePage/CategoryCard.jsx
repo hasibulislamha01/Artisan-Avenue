@@ -9,7 +9,7 @@ const CategoryCard = ({ category }) => {
         <div className="card glass  platypi">
             <figure><img className='h-[200px] w-full' src={category?.image} alt="car!" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{category?.subCategory}</h2>
+                <h2 className="card-title text-sky-400">{category?.subCategory}</h2>
                 <p>{category?.line}</p>
                 <div className="card-actions">
                     <Link to={`/allCategories/${subCategoryId}`} className="mt-4 btn bg-rose-200 w-4/5 mx-auto">Similar Paintings</Link>
