@@ -10,7 +10,7 @@ const YourSpot = () => {
     const [mySpot, setMySpot] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mySpot/${user?.email}`)
+        fetch(`https://a-10-travel-site-server.vercel.app/mySpot/${user?.email}`)
             .then(res => res.json())
             .then(data => setMySpot(data))
 
