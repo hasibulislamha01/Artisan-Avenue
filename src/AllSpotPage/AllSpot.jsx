@@ -10,7 +10,7 @@ const AllSpot = () => {
 
 
     return (
-        <div className="container mx-auto mt-12">
+        <div className="container mx-auto mt-12 pb-12 lg:pb-32">
 
             <h1 className="text-center text-3xl lg:text-5xl font-semibold styled-font my-3 text-rose-300">All Arts here</h1>
             <div className="">

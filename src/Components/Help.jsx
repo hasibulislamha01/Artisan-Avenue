@@ -16,7 +16,7 @@ const Help = () => {
                     </div>
                 </div>
 
-                <div className="card bg-rose-200 text-black-content">
+                <div className="card bg-rose-100 text-black-content">
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">visit the Showdown FREE</h2>
                         <p>We offer a loyality programme each year where our regular users can join the biggest fair of arts for free.</p>
