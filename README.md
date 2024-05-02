@@ -1,6 +1,29 @@
-# React + Tailwind + Daisyui + React-router
+# Artisan Avenue
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### live site: https://travelsite-a2d59.web.app/
+
+### Features of the website
+- Clients can explore different kinds of artwork made by the famous artists for free
+- Clients can buy paintings that they like
+- Loyal clients can get a special offer of joinning an exhibition fair and meet their artists live
+- Admins can add, delete and update new paintings in the website
+- Who provides such a beautifull UI !!!
+
+
+#### Packeges used :
+- React simple typewriter
+- React Awsome reveal
+- Material UI
+- Daisy Ui and so on so more.
+
+#### Selected Categories:
+- Landscape Painting
+- Portrait Drawing
+- Watercolour Painting
+- Oil Painting
+- Charcoal Sketching
+- Cartoon Drawing
+
 
 Currently, two official plugins are available:
 
