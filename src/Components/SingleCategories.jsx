@@ -5,14 +5,14 @@ const SingleCategories = ({ item }) => {
     return (
         <div className="platypi rounded-xl bg-rose-50">
             <div className="px-12 pt-12 pb-6 rounded-2xl ">
-                <img className=" rounded-2xl border " src={item?.photo} alt="" />
+                <img className=" rounded-2xl " src={item?.photo} alt="" />
             </div>
-            <div className="flex justify-around items-center pb-8">
+            <div className="flex flex-col-reverse md:flex-row justify-around items-center pb-8">
                 <div className="w-2/5 space-y-5">
                     <p className="text-xl ">
                         {item?.description}
                     </p>
-                    <Link className="btn bg-sky-300">View Details</Link>
+                    <Link to={`/spot/${item._id}`} className="btn bg-sky-300">View Details</Link>
                 </div>
                 <div>
                     <h1 className="text-3xl text-sky-400">{item?.craftName ||item?.spotName}</h1>

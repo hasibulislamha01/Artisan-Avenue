@@ -79,7 +79,7 @@ const Register = () => {
             <Helmet>
                 <title>TrustTravel | Register</title>
             </Helmet>
-            <div className="w-full md:w-1/2 lg:w-[35%] mx-auto px-2 mt-12 space-y-8">
+            <div className="w-full md:w-1/2 lg:w-[35%] mx-auto px-2 mt-12 space-y-8 pb-12 lg:pb-24">
                 <h1 className="text-3xl font-bold text-center">Please Register</h1>
                 <form className="space-y-4" onSubmit={handleRegister}>
                     <label className="input input-bordered flex items-center gap-2">

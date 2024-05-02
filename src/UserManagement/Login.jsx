@@ -81,7 +81,7 @@ const Login = () => {
         setShowpassword(!showPassword);
     }
     return (
-        <div className='mt-12'>
+        <div className='mt-12 pb-12 lg:pb-24'>
             {
                 location?.state ?
                     <div className='mb-4'>
