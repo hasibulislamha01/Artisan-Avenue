@@ -22,7 +22,7 @@ const YourSpotCard = ({ mySingleSpot, mySpot, setMySpot }) => {
             if (result.isConfirmed) {
 
 
-                fetch(`https://a-10-travel-site-server.vercel.app/spot/${mySingleSpot?._id}`, {
+                fetch(`http://localhost:5000/spot/${mySingleSpot?._id}`, {
                     method: 'DELETE',
                     headers: {
 

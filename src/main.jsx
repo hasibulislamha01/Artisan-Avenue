@@ -20,6 +20,7 @@ import UpdateSpot from './YourSpotPage/UpdateSpot';
 import NotFound from './NotFound/NotFound';
 import AddCountries from './Components/AddCountries';
 import Countries from './Components/Countries';
+import AllCategories from './Components/AllCategories';
 // import Test from './Components/test';
 
 const router = createBrowserRouter([
@@ -33,20 +34,20 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch('https://a-10-travel-site-server.vercel.app/spot'),
+        loader: () => fetch('http://localhost:5000/spot'),
         element: <Home></Home>
       },
 
       {
         path: "/allSpots",
-        loader: () => fetch('https://a-10-travel-site-server.vercel.app/spot'),
+        loader: () => fetch('http://localhost:5000/spot'),
         element: <AllSpot></AllSpot>
       },
 
       {
         path: "/spot/:id",
         loader: async ({ params }) => {
-          const response = await fetch(`https://a-10-travel-site-server.vercel.app/spot`)
+          const response = await fetch(`http://localhost:5000/spot`)
           const data = await response.json()
 
           console.log(data, params)
@@ -78,7 +79,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        loader: ({ params }) => fetch(`https://a-10-travel-site-server.vercel.app/spot/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`),
         element: <UpdateSpot></UpdateSpot>
       },
       {
@@ -89,7 +90,13 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
-      }
+      },
+
+      {
+        path: "/allCategories/:subCategoryId",
+        loader: ({params})=>fetch(`http://localhost:5000/categories`), 
+        element: <AllCategories></AllCategories>
+      },
 
 
     ]

@@ -46,7 +46,7 @@ const AddSpot = () => {
 
 
         // send data to database
-        fetch('https://a-10-travel-site-server.vercel.app/spot', {
+        fetch('http://localhost:5000/spot', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -63,7 +63,7 @@ const AddSpot = () => {
     }
 
     return (
-        <div className="mt-12">
+        <div className="pt-12 pb-32 categories-svg">
             <Toaster></Toaster>
             <h1 className="text-center text-3xl font-medium">Add a new <span>Craft</span></h1>
 

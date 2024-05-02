@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const SpotDetail = () => {
     const data = useLoaderData();
@@ -44,11 +44,13 @@ const SpotDetail = () => {
                     </p>
                 </div>
                 <div className="space-y-3">
-                    <h4 className="text-xl">Time Required to deliver: {spot?.travelDuration}</h4>
+                    <h4 className="text-xl">Time Required to deliver: {spot?.travelDuration} hours</h4>
                     <h3 className="text-xl">Price: {spot?.cost} $ </h3>
                 </div>
             </div>
             <p>added by: {spot?.email}</p>
+            
+            <Link to="/" className="btn btn-sm mt-10 bg-[#FFD662]">Back to home</Link>
         </div>
     );
 };

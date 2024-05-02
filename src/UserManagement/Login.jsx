@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { Bounce } from 'react-awesome-reveal';
-import { GithubAuthProvider } from 'firebase/auth/cordova';
+import { GithubAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 

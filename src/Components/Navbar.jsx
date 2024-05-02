@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <div className="w-full bg-gray-600 bg-opacity-75 sticky bg-blur">
             <Toaster></Toaster>
-            <nav className="navbar container mx-auto platypi font-bold">
+            <nav className="navbar container mx-auto platypi font-bold drop-shadow-lg ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost text-xl text-[#FFD700]"> <span>Artisan</span><span>Avenue</span></Link>
+                    <Link className="btn btn-ghost text-3xl text-[#FFD700]"> <span>Artisan</span><span>Avenue</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-xl font-semibold w-full flex gap-6">
@@ -48,10 +48,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="flex items-center gap-4">
-                        <div>
+                        <div className="hidden md:inline-flex">
                             {
                                 user ?
-                                    <div className="tooltip tooltip-bottom" data-tip={userName}>
+                                    <div className="tooltip tooltip-left z-50" data-tip={userName}>
                                         <img className="w-14 h-14 rounded-full z-50" src={userImage} alt="" />
                                     </div>
                                     :

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 
@@ -7,16 +6,17 @@
 @tailwind utilities;
 
 
-.styled-font{
+.styled-font {
     font-family: "Great Vibes", cursive;
 
 }
-.platypi{
+
+.platypi {
     font-family: "Dosis", sans-serif;
 }
 
 
-.bg-blur{
+.bg-blur {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
@@ -32,31 +32,51 @@
     background-image: url('topBanner.jpg');
     background-position: center;
     background-size: cover;
-    
+
 }
 
-.slider-bg{
+.slider-bg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     /* background-blend-mode: darken; */
 }
-.slide-1{
-    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("topBanner.jpg");
+
+.slide-1 {
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("topBanner.jpg");
     /* background-blend-mode: darken; */
 }
-.slide-2{
-    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-2.jpg");
+
+.slide-2 {
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("b-2.jpg");
 }
-.slide-3{
-    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-3.jpg");
+
+.slide-3 {
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("b-3.jpg");
 }
-.slide-4{
-    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-4.jpg");
+
+.slide-4 {
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("b-4.jpg");
 }
-.slide-5{
-    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-5.jpg");
+
+.slide-5 {
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("b-5.jpg");
 }
-.slide-6{
-    background-image: linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url("b-6.jpg");
+
+.slide-6 {
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("b-6.jpg");
+}
+
+.svg {
+    background-color: #FECDD3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF1F2'/%3E%3Cstop offset='1' stop-color='%23FECDD3'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FDA4AF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FDA4AF' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.36'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.categories-svg {
+    background-color: #FECDD3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23FECDD3'/%3E%3Cstop offset='1' stop-color='%23F0ABFC'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23E9D5FF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23E9D5FF' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23E9D5FF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23E9D5FF' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }

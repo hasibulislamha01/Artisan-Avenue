@@ -12,7 +12,7 @@ const AllSpot = () => {
     return (
         <div className="container mx-auto mt-12">
 
-            <h1 className="text-center text-3xl font-semibold styled-font my-3 text-rose-400">All spots here</h1>
+            <h1 className="text-center text-3xl lg:text-5xl font-semibold styled-font my-3 text-rose-300">All Arts here</h1>
             <div className="">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">

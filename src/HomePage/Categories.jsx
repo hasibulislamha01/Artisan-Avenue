@@ -1,0 +1,36 @@
+import { useEffect, useState } from "react";
+import CategoryCard from "./CategoryCard";
+
+const Categories = () => {
+
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/categories')
+            .then(res => res.json())
+            .then(data => {
+                setCategories(data)
+            })
+    }, [])
+
+    console.log(categories)
+
+    return (
+        <div className="container mx-auto">
+            <h1 className="mt-12 lg:mt-24 text-center text-3xl lg:text-5xl text-rose-500 styled-font">Categories</h1>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {
+                    categories.map(category =>
+                        <CategoryCard
+                            key={category._id}
+                            category={category}
+                        >
+                        </CategoryCard>)
+                }
+            </div>
+            
+        </div>
+    );
+};
+
+export default Categories;

@@ -29,7 +29,7 @@ const UpdateSpot = () => {
 
 
         // send data to database
-        const response = await fetch(`https://a-10-travel-site-server.vercel.app/spot/${spot?._id}`, {
+        const response = await fetch(`http://localhost:5000/spot/${spot?._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

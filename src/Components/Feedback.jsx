@@ -25,7 +25,7 @@ const Feedback = () => {
                     <div className="mt-6">
                         <h3>How was the service ? Explaine briefly</h3>
                         <label className="min-h-64">
-                            <textarea required className="border min-h-64 w-full border-rose-300 rounded-lg">
+                            <textarea required className="bg-rose-100 border min-h-64 w-full border-rose-300 rounded-lg">
 
                             </textarea>
                         </label>
