@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import toast, { Toaster } from "react-hot-toast";
 import Select from 'react-select'
 
@@ -64,8 +65,11 @@ const AddSpot = () => {
 
     return (
         <div className="pt-12 pb-32 categories-svg">
+            <Helmet>
+                Artisan Avenue | Add Art
+            </Helmet>
             <Toaster></Toaster>
-            <h1 className="text-center text-3xl font-medium">Add a new <span>Craft</span></h1>
+            <h1 className="text-center text-3xl font-medium">Add a new <span>Art</span></h1>
 
             <form onSubmit={handleAddSpot} className="w-4/5 md:W-3/5 lg:w-2/5 mx-auto mt-6 space-y-3 flex flex-col justify-center">
                 <label className="input input-bordered flex items-center gap-2">

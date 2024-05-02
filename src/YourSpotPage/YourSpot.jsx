@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import YourSpotCard from "./YourSpotCard";
+import { Helmet } from "react-helmet-async";
 
 const YourSpot = () => {
 
@@ -23,6 +24,9 @@ const YourSpot = () => {
 
     return (
         <div className="mt-12 container mx-auto">
+            <Helmet>
+                Artisan Avenue | Your Arts
+            </Helmet>
             <div className="flex flex-col lg:flex-row justify-between items-center">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn">Filter</div>
