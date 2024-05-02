@@ -4,7 +4,7 @@ import TypeWriter from "./TypeWriter";
 const Slider = () => {
 
     return (
-        <div className="carousel w-full z-10">
+        <div className="carousel w-full z-10 platypi">
             <div id="slide4" className="carousel-item relative w-full">
                 <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://plus.unsplash.com/premium_photo-1677679817248-c0069f56c94e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}>
                     <div className="hero-overlay bg-opacity-60"></div>

@@ -1,6 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-import SpotCard from "./SpotCard";
-import { useState } from "react";
+
 
 const AllSpot = () => {
     const touristSpots = useLoaderData()
