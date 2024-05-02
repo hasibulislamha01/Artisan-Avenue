@@ -15,7 +15,7 @@ const SingleCategories = ({ item }) => {
                     <Link className="btn bg-sky-300">View Details</Link>
                 </div>
                 <div>
-                    <h1 className="text-3xl text-sky-400">{item?.spotName}</h1>
+                    <h1 className="text-3xl text-sky-400">{item?.craftName ||item?.spotName}</h1>
                     <h4 className="text-xl">{item?.countryName}</h4>
 
                     <div className="text-lg">

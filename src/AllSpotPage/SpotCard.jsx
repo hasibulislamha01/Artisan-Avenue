@@ -5,10 +5,10 @@ const SpotCard = ({ spot }) => {
     console.log(spot)
 
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl platypi">
             <figure><img className="h-[200px] w-full" src={spot?.photo} alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{spot?.craftName ||spot?.spotName}</h2>
+                <h2 className="card-title text-sky-400">{spot?.craftName ||spot?.spotName}</h2>
                 <h6>{spot?.countryName}</h6>
                 <hr className='border-b-[1px] border-blue-200 w-full mx-auto' />
                 <div className='space-y-2 mt-4'>

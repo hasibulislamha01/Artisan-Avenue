@@ -6,7 +6,7 @@ const CategoryCard = ({ category }) => {
     const subCategoryId = category?.subCategory;
     console.log(subCategoryId)
     return (
-        <div className="card glass">
+        <div className="card glass  platypi">
             <figure><img className='h-[200px] w-full' src={category?.image} alt="car!" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{category?.subCategory}</h2>

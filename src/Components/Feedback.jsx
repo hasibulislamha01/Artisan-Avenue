@@ -1,7 +1,7 @@
 
 const Feedback = () => {
     return (
-        <div className="mt-12 md:mt-20 text-center">
+        <div className="mt-12 md:mt-20 text-center platypi">
             <h1 className="text-3xl font-semibold">Help us to improve </h1>
             <p className="mt-4 w-1/2 mx-auto text-gray-800">Fill up the following feedback form to help us know your experience with us. We always try to serve you the better services.</p>
             <div>
