@@ -24,7 +24,7 @@ const AllCategories = () => {
 
     }, [])
 
-    const homologous = art?.filter(singleArt => singleArt?.countryName === subCategory )
+    const homologous = art?.filter(singleArt => singleArt?.countryName || singleArt?.subCategoryName === subCategory )
     console.log(homologous)
 
 

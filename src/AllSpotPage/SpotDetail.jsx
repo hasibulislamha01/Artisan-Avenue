@@ -17,7 +17,7 @@ const SpotDetail = () => {
                     <h1 className="text-3xl text-sky-400 font-semibold">{spot?.craftName ||spot?.spotName}</h1>
                     <h3 className="text-lg font-medium">
 
-                        <span>{spot?.countryName}</span>
+                        <span>{spot?.countryName || spot?.subCategoryName}</span>
                     </h3>
                     <hr className="mb-3 w-full lg:w-1/2  mx-auto" />
                 </div>
@@ -44,7 +44,7 @@ const SpotDetail = () => {
                     </p>
                 </div>
                 <div className="space-y-3">
-                    <h4 className="text-xl">Time Required to deliver: {spot?.travelDuration} hours</h4>
+                    <h4 className="text-xl">Time Required to deliver: {spot?.travelDuration || spot?.processingTime} hours</h4>
                     <h3 className="text-xl">Price: {spot?.cost} $ </h3>
                 </div>
             </div>

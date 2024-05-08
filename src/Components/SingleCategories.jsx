@@ -5,7 +5,7 @@ const SingleCategories = ({ item }) => {
     return (
         <div className="platypi rounded-xl bg-rose-50">
             <div className="px-12 pt-12 pb-6 rounded-2xl ">
-                <img className=" rounded-2xl " src={item?.photo} alt="" />
+                <img className=" rounded-2xl w-full" src={item?.photo} alt="" />
             </div>
             <div className="flex flex-col-reverse md:flex-row justify-around items-center pb-8">
                 <div className="w-2/5 space-y-5">

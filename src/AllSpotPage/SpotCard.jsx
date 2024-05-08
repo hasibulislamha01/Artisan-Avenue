@@ -9,16 +9,16 @@ const SpotCard = ({ spot }) => {
             <figure><img className="h-[200px] w-full" src={spot?.photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-sky-400">{spot?.craftName ||spot?.spotName}</h2>
-                <h6>{spot?.countryName}</h6>
+                <h6>{spot?.countryName || spot?.subCategoryName}</h6>
                 <hr className='border-b-[1px] border-blue-200 w-full mx-auto' />
                 <div className='space-y-2 mt-4'>
-                    <p>Rating: <span>{spot?.location}</span> </p>
+                    <p>Rating: <span>{spot?.location || spot?.rating}</span> </p>
                     <div>
-                        {
+                        {/* {
                             JSON.parse(spot?.customizable) === true ?
                             <p>Customizable</p>
                             : <p>Not Customizable</p>
-                        }
+                        } */}
                     </div>
                     <div>
                         {
