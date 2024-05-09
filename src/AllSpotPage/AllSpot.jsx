@@ -34,7 +34,7 @@ const AllSpot = () => {
                                 touristSpots.map(art =>
                                     <tr key={art?._id}>
                                         <td>{art?.craftName ||art?.spotName}</td>
-                                        <td>{art?.countryName}</td>
+                                        <td>{art?.countryName || art?.subCategoryName}</td>
                                         {art?.inStock ? <td>In Stock</td> : <td>Out of Stock</td>}
                                         <td>{art?.cost}</td>
                                         <td> <Link to={`/spot/${art._id}`} className="btn bg-rose-200 btn-sm">View Details</Link></td>
