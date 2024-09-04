@@ -10,7 +10,7 @@ const AllSpot = () => {
 
 
     return (
-        <div className="container mx-auto mt-12 pb-12 lg:pb-32">
+        <div className="container mx-auto flex flex-col justify-center py-16 lg:pb-32">
             <Helmet>
                 Artisan Avenue | Art List
             </Helmet>

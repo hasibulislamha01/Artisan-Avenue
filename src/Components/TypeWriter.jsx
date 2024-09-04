@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 
 function App() {
 	return (
-		<div className="App">
+		<div className="App text-rose-300">
 			<Typewriter
 				onInit={(typewriter) => {
 					typewriter

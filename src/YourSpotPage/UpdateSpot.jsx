@@ -39,9 +39,9 @@ const UpdateSpot = () => {
         const data = await response.json()
         // toast.success
         console.log(data);
-        if (data.modifiedCount) {
+        if (data?.modifiedCount) {
             toast.success('Craft Updated successfully')
-            // finalCommand()
+            finalCommand()
         }
         else{
             toast.error('You have changed nothing about the craft')
@@ -79,11 +79,11 @@ const UpdateSpot = () => {
 
 
     return (
-        <div className="mt-12">
+        <div className="min-h-screen flex flex-col justify-center py-20">
             <Toaster></Toaster>
             <h1 className="text-center text-3xl font-medium">Update the Craft  <span>{spot?.spotName}</span></h1>
 
-            <form onSubmit={handleUpdateSpot} className="w-2/5 mx-auto mt-6 space-y-3">
+            <form onSubmit={handleUpdateSpot} className="mt-6 lg:w-2/5 mx-auto flex flex-col gap-4">
                 <label className="input input-bordered flex items-center gap-2">
                     <input
                         type="text"

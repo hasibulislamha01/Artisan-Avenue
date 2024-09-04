@@ -82,7 +82,7 @@ const AddSpot = () => {
     }
 
     return (
-        <div className="pt-12 pb-32 categories-svg">
+        <div className="min-h-screen flex flex-col justify-center py-20 categories-svg">
             <Helmet>
                 Artisan Avenue | Add Art
             </Helmet>

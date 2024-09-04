@@ -23,19 +23,19 @@ const YourSpot = () => {
 
 
     return (
-        <div className="mt-12 container mx-auto">
+        <div className="container mx-auto min-h-screen flex flex-col justify-center py-20 px-2">
             <Helmet>
                 Artisan Avenue | Your Arts
             </Helmet>
-            <div className="flex flex-col lg:flex-row justify-between items-center">
-                <div className="dropdown">
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+                <div className="dropdown order-2 md:order-none">
                     <div tabIndex={0} role="button" className="btn">Filter</div>
                     <ul tabIndex={0} className="dropdown-content dropdown-right z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                         <button className="btn" onClick={() => setSearch('true')}>Customizable</button>
                         <button className="btn" onClick={() => setSearch('false')}>Not customizable</button>
                     </ul>
                 </div>
-                <h1 className="text-center text-3xl">Your Crafts</h1>
+                <h1 className="text-center text-3xl order-1  md:order-none">Your Crafts</h1>
                 <div>
 
                 </div>

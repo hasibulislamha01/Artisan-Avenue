@@ -74,7 +74,7 @@ const Register = () => {
     const [showPassword, setShowpassword] = useState(false)
 
     return (
-        <div>
+        <div className='min-h-screen flex flex-col justify-center px-2 md:py-20'>
             <Toaster></Toaster>
             <Helmet>
                 <title>TrustTravel | Register</title>

@@ -81,7 +81,7 @@ const Login = () => {
         setShowpassword(!showPassword);
     }
     return (
-        <div className='mt-12 pb-12 lg:pb-24'>
+        <div className='min-h-screen flex flex-col justify-center px-2 lg:py-20 lg:pb-24'>
             {
                 location?.state ?
                     <div className='mb-4'>
