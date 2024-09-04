@@ -14,11 +14,11 @@ const SpotCard = ({ spot }) => {
                 <div className='space-y-2 mt-4'>
                     <p>Rating: <span>{spot?.location || spot?.rating}</span> </p>
                     <div>
-                        {/* {
+                        {
                             JSON.parse(spot?.customizable) === true ?
                             <p>Customizable</p>
                             : <p>Not Customizable</p>
-                        } */}
+                        }
                     </div>
                     <div>
                         {

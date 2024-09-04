@@ -39,7 +39,7 @@ const Drawer = () => {
 
     return (
         <>
-            <button className="text-warning text-5xl font-bold platypi" onClick={() => { setOpen(true) }}>
+            <button className="text-warning text-[35px] font-bold platypi" onClick={() => { setOpen(true) }}>
                 <IoIosLogIn></IoIosLogIn>
             </button>
             <SlidingMenu anchor="right" open={open} onClose={() => { setOpen(false) }}>
