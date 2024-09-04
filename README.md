@@ -1,5 +1,5 @@
 # Artisan Avenue
-
+#### This is an online based art gallery that exhibits artworks to users and allows the users to buy  them.
 ### live site: https://travelsite-a2d59.web.app/
 
 ### Features of the website
