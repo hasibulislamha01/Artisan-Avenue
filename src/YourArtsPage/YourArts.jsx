@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import YourSpotCard from "./YourSpotCard";
 import { Helmet } from "react-helmet-async";
+import YourArtCard from "./YourArtCard";
 
-const YourSpot = () => {
+const YourArts = () => {
 
     // const [spot, setSpot] = useState()
 
@@ -29,10 +29,10 @@ const YourSpot = () => {
             </Helmet>
             <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
                 <div className="dropdown order-2 md:order-none">
-                    <div tabIndex={0} role="button" className="btn">Filter</div>
-                    <ul tabIndex={0} className="dropdown-content dropdown-right z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <button className="btn" onClick={() => setSearch('true')}>Customizable</button>
-                        <button className="btn" onClick={() => setSearch('false')}>Not customizable</button>
+                    <div tabIndex={0} role="button" className="btn bg-rose-200">Filter</div>
+                    <ul tabIndex={0} className="dropdown-content dropdown-right z-[1] menu p-4 shadow rounded-box w-52 space-y-4 bg-rose-100 ">
+                        <button className="btn rounded-[10px] hover:bg-rose-300" onClick={() => setSearch('true')}>Customizable</button>
+                        <button className="btn rounded-[10px] hover:bg-rose-300" onClick={() => setSearch('false')}>Not customizable</button>
                     </ul>
                 </div>
                 <h1 className="text-center text-3xl order-1  md:order-none">Your Crafts</h1>
@@ -45,29 +45,19 @@ const YourSpot = () => {
                     mySpot.filter(spot => {
                         return search.toLowerCase() === '' ? spot : spot?.customizable.toLowerCase().includes(search)
                     }).map(mySingleSpot =>
-                        <YourSpotCard
+                        <YourArtCard
                             key={mySingleSpot._id}
                             mySingleSpot={mySingleSpot}
                             mySpot={mySpot}
                             setMySpot={setMySpot}
                         >
 
-                        </YourSpotCard>)
+                        </YourArtCard>)
                 }
-                {/* {
-                    mySpot.map(mySingleSpot =>
-                        <YourSpotCard
-                            key={mySingleSpot._id}
-                            mySingleSpot={mySingleSpot}
-                            mySpot={mySpot}
-                            setMySpot={setMySpot}
-                        >
-
-                        </YourSpotCard>)
-                } */}
+                
             </div>
         </div>
     );
 };
 
-export default YourSpot;
+export default YourArts;

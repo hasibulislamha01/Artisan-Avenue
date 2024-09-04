@@ -4,7 +4,7 @@ const NotFound = () => {
     const error = useRouteError()
     console.error(error.message)
     return (
-        <div id="error-page" className="text-center flex flex-col items-center justify-center h-screen">
+        <div id="error-page" className="h-screen text-center flex flex-col items-center justify-center">
             <h1 className="text-5xl lg:text-9xl font-semibold lg:font-black">404</h1>
             <p className="text-xl lg:text-3xl font-bold">Sorry, an unexpected error has occurred.</p>
             <p>

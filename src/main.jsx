@@ -14,9 +14,9 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import AddSpot from './AddSpotPage/AddSpot';
 import AllSpot from './AllSpotPage/AllSpot';
 import ValidateUser from './UserManagement/ValidateUser';
-import YourSpot from './YourSpotPage/YourSpot';
+import YourArts from './YourArtsPage/YourArts';
 import SpotDetail from './AllSpotPage/SpotDetail';
-import UpdateSpot from './YourSpotPage/UpdateSpot';
+import UpdateArt from './YourArtsPage/UpdateArt';
 import NotFound from './NotFound/NotFound';
 import AddCountries from './Components/AddCountries';
 import Countries from './Components/Countries';
@@ -75,12 +75,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/myList",
-        element: <ValidateUser> <YourSpot></YourSpot> </ValidateUser>
+        element: <ValidateUser> <YourArts></YourArts> </ValidateUser>
       },
       {
         path: "/update/:id",
         loader: ({ params }) => fetch(`https://a-10-travel-site-server.vercel.app/spot/${params.id}`),
-        element: <UpdateSpot></UpdateSpot>
+        element: <UpdateArt></UpdateArt>
       },
       {
         path: "/login",
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
 
       {
         path: "/allCategories/:subCategoryId",
-        loader: ({params})=>fetch(`https://a-10-travel-site-server.vercel.app/categories`), 
+        loader: ({ params }) => fetch(`https://a-10-travel-site-server.vercel.app/categories`),
         element: <AllCategories></AllCategories>
       },
 
@@ -105,10 +105,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <HelmetProvider>
+    <HelmetProvider>
+      <AuthProvider>
         <RouterProvider router={router} />
-      </HelmetProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>,
 )

@@ -8,7 +8,7 @@ const SpotDetail = () => {
     const spot = data.find(singleData => singleData._id == id)
     console.log(spot)
     return (
-        <div className="container mx-auto mt-12 text-center pb-12 lg:pb-32">
+        <div className="container mx-auto flex flex-col justify-center py-20 text-center">
             <div>
                 <img className="w-full mx-auto" src={spot?.photo} alt="" />
             </div>
@@ -50,7 +50,7 @@ const SpotDetail = () => {
             </div>
             <p>added by: {spot?.email}</p>
             
-            <Link to="/" className="btn btn-sm mt-10 bg-sky-400">Back to home</Link>
+            <Link to="/" className="w-[200px] mx-auto btn btn-sm mt-10 bg-sky-400">Back to home</Link>
         </div>
     );
 };

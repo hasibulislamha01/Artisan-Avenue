@@ -2,7 +2,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Select from 'react-select'
 
-const UpdateSpot = () => {
+const UpdateArt = () => {
 
     const navigate = useNavigate();
     const spot = useLoaderData()
@@ -81,7 +81,7 @@ const UpdateSpot = () => {
     return (
         <div className="min-h-screen flex flex-col justify-center py-20">
             <Toaster></Toaster>
-            <h1 className="text-center text-3xl font-medium">Update the Craft  <span>{spot?.spotName}</span></h1>
+            <h1 className="text-center text-3xl font-medium">Update the Craft  <span className="text-rose-400 ml-4">{spot?.spotName}</span></h1>
 
             <form onSubmit={handleUpdateSpot} className="mt-6 lg:w-2/5 mx-auto flex flex-col gap-4">
                 <label className="input input-bordered flex items-center gap-2">
@@ -174,4 +174,4 @@ const UpdateSpot = () => {
     );
 };
 
-export default UpdateSpot;
+export default UpdateArt;

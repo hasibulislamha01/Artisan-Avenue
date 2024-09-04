@@ -16,8 +16,8 @@ const Categories = () => {
     console.log(categories)
 
     return (
-        <div className="container mx-auto">
-            <h1 className="mt-12 lg:mt-24 text-center text-3xl lg:text-5xl text-rose-500 styled-font">Categories</h1>
+        <div className="container mx-auto mt-20  md:mt-[300px]">
+            <h1 className="text-center text-3xl lg:text-5xl text-rose-500 styled-font">Categories</h1>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                     categories.map(category =>

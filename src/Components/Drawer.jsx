@@ -11,7 +11,7 @@ const Drawer = () => {
     const image = user?.photoURL;
     console.log(image)
 
-    const [theme, setTheme] = useState('light')
+    const [theme, setTheme] = useState('pastel')
 
     console.log(theme)
     const toggleTheme = (e) => {
@@ -19,7 +19,7 @@ const Drawer = () => {
             setTheme('forest')
         }
         else{
-            setTheme('light')
+            setTheme('pastel')
         }
     }
 
