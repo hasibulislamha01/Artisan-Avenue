@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 
-const AllSpot = () => {
+const AllArts = () => {
     const touristSpots = useLoaderData()
     console.log(touristSpots)
 
@@ -49,4 +49,4 @@ const AllSpot = () => {
     );
 };
 
-export default AllSpot;
+export default AllArts;

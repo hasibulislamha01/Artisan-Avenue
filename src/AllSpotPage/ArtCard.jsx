@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
-const SpotCard = ({ spot }) => {
+const ArtCard = ({ spot }) => {
     console.log(spot)
 
     return (
@@ -37,9 +37,9 @@ const SpotCard = ({ spot }) => {
     );
 };
 
-SpotCard.propTypes = {
+ArtCard.propTypes = {
     spot: PropTypes.object
 }
 
 
-export default SpotCard;
+export default ArtCard;

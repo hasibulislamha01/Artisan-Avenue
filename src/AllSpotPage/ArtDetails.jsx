@@ -1,6 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
-const SpotDetail = () => {
+const ArtDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
     console.log(data, id)
@@ -50,9 +50,9 @@ const SpotDetail = () => {
             </div>
             <p>added by: {spot?.email}</p>
             
-            <Link to="/" className="w-[200px] mx-auto btn btn-sm mt-10 bg-sky-400">Back to home</Link>
+            <Link to="/allSpots" className="w-[200px] mx-auto btn btn-sm mt-10 bg-sky-400">Back to Arts</Link>
         </div>
     );
 };
 
-export default SpotDetail;
+export default ArtDetails;

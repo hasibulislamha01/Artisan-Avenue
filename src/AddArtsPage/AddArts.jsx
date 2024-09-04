@@ -4,7 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Select from 'react-select'
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
-const AddSpot = () => {
+const AddArts = () => {
 
     const { user } = useContext(AuthContext)
 
@@ -194,10 +194,10 @@ const AddSpot = () => {
                         placeholder="Email" />
                 </label>
 
-                <button className=" btn btn-info w-full md:w-1/2 lg:w-3/5 mx-auto" type="submit"> Add Spot </button>
+                <button className=" btn btn-info w-full md:w-1/2 lg:w-3/5 mx-auto" type="submit"> Add Art </button>
             </form>
         </div>
     );
 };
 
-export default AddSpot;
+export default AddArts;

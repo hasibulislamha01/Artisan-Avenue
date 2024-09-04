@@ -11,14 +11,14 @@ import Register from './UserManagement/Register';
 import { HelmetProvider } from 'react-helmet-async';
 import Login from './UserManagement/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
-import AddSpot from './AddSpotPage/AddSpot';
-import AllSpot from './AllSpotPage/AllSpot';
+import AddArts from './AddArtsPage/AddArts';
+import AllArts from './AllSpotPage/AllSpot';
 import ValidateUser from './UserManagement/ValidateUser';
 import YourArts from './YourArtsPage/YourArts';
-import SpotDetail from './AllSpotPage/SpotDetail';
+import ArtDetails from './AllSpotPage/ArtDetails';
 import UpdateArt from './YourArtsPage/UpdateArt';
 import NotFound from './NotFound/NotFound';
-import AddCountries from './Components/AddCountries';
+// import AddArts from './Components/AddArts';
 import Countries from './Components/Countries';
 import AllCategories from './Components/AllCategories';
 // import Test from './Components/test';
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "/allSpots",
         loader: () => fetch('https://a-10-travel-site-server.vercel.app/spot'),
-        element: <AllSpot></AllSpot>
+        element: <AllArts></AllArts>
       },
 
       {
@@ -56,17 +56,17 @@ const router = createBrowserRouter([
 
         },
 
-        element: <ValidateUser> <SpotDetail></SpotDetail> </ValidateUser>
+        element: <ValidateUser> <ArtDetails></ArtDetails> </ValidateUser>
       },
 
       {
         path: "/addSpot",
-        element: <ValidateUser> <AddSpot></AddSpot> </ValidateUser>
+        element: <ValidateUser> <AddArts></AddArts> </ValidateUser>
       },
 
       {
         path: "/addCountries",
-        element: <AddCountries></AddCountries>
+        element: <AddArts></AddArts>
       },
 
       {

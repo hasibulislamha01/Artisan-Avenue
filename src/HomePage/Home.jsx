@@ -3,7 +3,7 @@
 
 import { useLoaderData } from "react-router-dom";
 import Slider from "../Components/Slider";
-import SpotCard from "../AllSpotPage/SpotCard";
+import ArtCard from "../AllSpotPage/ArtCard";
 import Feedback from "../Components/Feedback";
 import Help from "../Components/Help";
 import Categories from "./Categories";
@@ -23,7 +23,7 @@ const Home = () => {
                 <h1 className="text-3xl lg:text-5xl styled-font text-center text-rose-500 font-medium mt-12 mb-6">All Arts</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
-                        spots?.map(spot => <SpotCard key={spot?._id} spot={spot}></SpotCard>)
+                        spots?.map(spot => <ArtCard key={spot?._id} spot={spot}></ArtCard>)
                     }
                 </div>
             </section>
