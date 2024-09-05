@@ -12,15 +12,15 @@ import { HelmetProvider } from 'react-helmet-async';
 import Login from './UserManagement/Login';
 import AuthProvider from './AuthProvider/AuthProvider';
 import AddArts from './AddArtsPage/AddArts';
-import AllArts from './AllSpotPage/AllSpot';
 import ValidateUser from './UserManagement/ValidateUser';
 import YourArts from './YourArtsPage/YourArts';
-import ArtDetails from './AllSpotPage/ArtDetails';
 import UpdateArt from './YourArtsPage/UpdateArt';
 import NotFound from './NotFound/NotFound';
 // import AddArts from './Components/AddArts';
 import Countries from './Components/Countries';
 import AllCategories from './Components/AllCategories';
+import AllArts from './AllArtsPage/AllArts';
+import ArtDetails from './AllArtsPage/ArtDetails';
 // import Test from './Components/test';
 
 const router = createBrowserRouter([

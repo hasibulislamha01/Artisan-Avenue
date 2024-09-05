@@ -8,10 +8,10 @@ const Drawer = () => {
 
     const { user, logoutUser } = useContext(AuthContext)
     const [open, setOpen] = useState(false);
+    const [theme, setTheme] = useState('pastel')
     const image = user?.photoURL;
     console.log(image)
 
-    const [theme, setTheme] = useState('pastel')
 
     console.log(theme)
     const toggleTheme = (e) => {
@@ -24,9 +24,9 @@ const Drawer = () => {
     }
 
     useEffect(()=>{
-        localStorage.setItem('theme', theme)
-        const localTheme = localStorage.getItem('theme')
-        document.querySelector('html').setAttribute('data-theme', localTheme)
+        localStorage?.setItem('theme', theme)
+        const localTheme = localStorage?.getItem('theme')
+        document?.querySelector('html').setAttribute('data-theme', localTheme)
     }, [theme])
 
     const handleLogout = () => {

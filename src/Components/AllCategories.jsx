@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SingleCategories from './SingleCategories';
 
 const AllCategories = () => {
@@ -11,7 +10,6 @@ const AllCategories = () => {
 
     const [art, setArt] = useState([])
 
-    // const response = await fetch('')
 
     useEffect(() => {
         fetch(`https://a-10-travel-site-server.vercel.app/spot`)
@@ -29,8 +27,8 @@ const AllCategories = () => {
 
 
     return (
-        <div className='container mx-auto pb-12 lg:pb-32'>
-            <h1 className='text-center text-3xl lg:text-7xl styled-font text-rose-300 mt-8 mb-2
+        <div className='container mx-auto min-h-screen flex flex-col justify-center py-20'>
+            <h1 className='text-center text-3xl lg:text-7xl styled-font text-rose-300 my-6
             '>{subCategory}</h1>
             <div className='space-y-6'>
                 {

@@ -7,7 +7,7 @@ const Help = () => {
                 <span className="ml-3 styled-font text-rose-400 mr-3">Avenue</span> can help</h1>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
-                <div className="card bg-rose-100 text-black-content">
+                <div className="card bg-rose-100 ">
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Get the best Artwork at hand</h2>
                         <p>With over 1 million+ paintigs for sale available on the website, We can match you with a place you will want to call home..</p>
@@ -16,7 +16,7 @@ const Help = () => {
                     </div>
                 </div>
 
-                <div className="card bg-rose-100 text-black-content">
+                <div className="card bg-pastelSky dark:bg-slate-800 dark:text-pastelSky">
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">visit the Showdown FREE</h2>
                         <p>We offer a loyality programme each year where our regular users can join the biggest exhibition fair of arts for free.</p>
