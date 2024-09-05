@@ -23,39 +23,53 @@ const YourArts = () => {
 
 
     return (
-        <div className="container mx-auto min-h-screen flex flex-col justify-center py-20 px-2">
+        <div className="container mx-auto min-h-screen flex flex-col justify-center items-center py-20 px-2">
             <Helmet>
                 Artisan Avenue | Your Arts
             </Helmet>
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-                <div className="dropdown order-2 md:order-none">
-                    <div tabIndex={0} role="button" className="btn bg-rose-200">Filter</div>
-                    <ul tabIndex={0} className="dropdown-content dropdown-right z-[1] menu p-4 shadow rounded-box w-52 space-y-4 bg-rose-100 ">
-                        <button className="btn rounded-[10px] hover:bg-rose-300" onClick={() => setSearch('true')}>Customizable</button>
-                        <button className="btn rounded-[10px] hover:bg-rose-300" onClick={() => setSearch('false')}>Not customizable</button>
-                    </ul>
-                </div>
-                <h1 className="text-center text-3xl order-1  md:order-none">Your Crafts</h1>
-                <div>
+            {
+                mySpot?.length !== 0 ?
+                    <>
+                        <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+                            <div className="dropdown order-2 md:order-none">
+                                <div tabIndex={0} role="button" className="btn bg-rose-200">Filter</div>
+                                <ul tabIndex={0} className="dropdown-content dropdown-right z-[1] menu p-4 shadow rounded-box w-52 space-y-4 bg-rose-100 ">
+                                    <button className="btn rounded-[10px] hover:bg-rose-300" onClick={() => setSearch('true')}>Customizable</button>
+                                    <button className="btn rounded-[10px] hover:bg-rose-300" onClick={() => setSearch('false')}>Not customizable</button>
+                                </ul>
+                            </div>
+                            <h1 className="text-center text-3xl order-1  md:order-none">Your Crafts</h1>
+                            <div>
 
-                </div>
-            </div>
-            <div>
-                {
-                    mySpot.filter(spot => {
-                        return search.toLowerCase() === '' ? spot : spot?.customizable.toLowerCase().includes(search)
-                    }).map(mySingleSpot =>
-                        <YourArtCard
-                            key={mySingleSpot._id}
-                            mySingleSpot={mySingleSpot}
-                            mySpot={mySpot}
-                            setMySpot={setMySpot}
-                        >
+                            </div>
+                        </div>
+                        <div>
+                            {
+                                mySpot?.filter(spot => {
+                                    return search.toLowerCase() === '' ? spot : spot?.customizable.toLowerCase().includes(search)
+                                }).map(mySingleSpot =>
+                                    <YourArtCard
+                                        key={mySingleSpot._id}
+                                        mySingleSpot={mySingleSpot}
+                                        mySpot={mySpot}
+                                        setMySpot={setMySpot}
+                                    >
 
-                        </YourArtCard>)
-                }
-                
-            </div>
+                                    </YourArtCard>)
+
+                            }
+
+                        </div>
+                    </>
+                    :
+                    <div className="flex flex-col items-center gap-12">
+                        <h1 className="text-rose-500 text-2xl md:text-5xl">You have not created any arts yet </h1>
+                        <img src="/public/empty.webp" alt="empty" className=" h-[250px]" />
+                        <button className="btn w-[200px] md:w-[300px] bg-sky-400 text-xl md:text-2xl px-6">Create One !</button>
+                    </div>
+
+            }
+
         </div>
     );
 };
