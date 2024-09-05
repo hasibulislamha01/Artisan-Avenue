@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import YourArtCard from "./YourArtCard";
+import { Link } from "react-router-dom";
+
 
 const YourArts = () => {
 
@@ -64,8 +66,17 @@ const YourArts = () => {
                     :
                     <div className="flex flex-col items-center gap-12">
                         <h1 className="text-rose-500 text-2xl md:text-5xl">You have not created any arts yet </h1>
-                        <img src="/public/empty.webp" alt="empty" className=" h-[250px]" />
-                        <button className="btn w-[200px] md:w-[300px] bg-sky-400 text-xl md:text-2xl px-6">Create One !</button>
+
+                        <picture>
+                            <source type="image/webp" srcSet="/public/empty.webp" className=" h-[250px]" />
+                            <img src="/public/empty.webp" alt="empty" className=" h-[250px]" />
+                        </picture>
+
+                        <Link to='/addSpot'>
+                            <button className="btn w-[200px] md:w-[300px] bg-sky-400 text-xl md:text-2xl px-6">
+                                Create One !
+                            </button>
+                        </Link>
                     </div>
 
             }
