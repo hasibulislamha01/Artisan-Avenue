@@ -15,7 +15,7 @@ const SingleCategories = ({ item }) => {
             {/* details container */}
             <div className="flex flex-col-reverse md:flex-row justify-between items-center py-4 gap-6">
 
-                {/* right side details section */}
+                {/* left side details section */}
                 <div className="w-full md:w-2/5 space-y-5">
                     <p className="text-xl ">
                         {item?.description}
@@ -23,8 +23,8 @@ const SingleCategories = ({ item }) => {
                     <Link to={`/spot/${item._id}`} className="btn bg-sky-300">View Details</Link>
                 </div>
 
-                {/* left side details section */}
-                <div className="">
+                {/* right side details section */}
+                <div className="space-y-5">
                     <h1 className="text-3xl text-sky-400">{item?.craftName || item?.spotName}</h1>
                     <h4 className="text-xl">{item?.countryName}</h4>
 

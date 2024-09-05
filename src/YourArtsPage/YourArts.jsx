@@ -30,7 +30,7 @@ const YourArts = () => {
             {
                 mySpot?.length !== 0 ?
                     <>
-                        <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+                        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 w-full">
                             <div className="dropdown order-2 md:order-none">
                                 <div tabIndex={0} role="button" className="btn bg-rose-200">Filter</div>
                                 <ul tabIndex={0} className="dropdown-content dropdown-right z-[1] menu p-4 shadow rounded-box w-52 space-y-4 bg-rose-100 ">
