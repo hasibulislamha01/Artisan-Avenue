@@ -68,8 +68,8 @@ const YourArts = () => {
                         <h1 className="text-rose-500 text-2xl md:text-5xl">You have not created any arts yet </h1>
 
                         <picture>
-                            <source type="image/webp" srcSet="/public/empty.webp" className=" h-[250px]" />
-                            <img src="/public/empty.png" alt="empty" className=" h-[250px]" />
+                            <source type="image/webp" srcSet="/empty.webp" className=" h-[250px]" />
+                            <img src="/empty.png" alt="empty" className=" h-[250px]" />
                         </picture>
 
                         <Link to='/addSpot'>
