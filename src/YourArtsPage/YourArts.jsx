@@ -69,7 +69,7 @@ const YourArts = () => {
 
                         <picture>
                             <source type="image/webp" srcSet="/public/empty.webp" className=" h-[250px]" />
-                            <img src="/public/empty.webp" alt="empty" className=" h-[250px]" />
+                            <img src="/public/empty.png" alt="empty" className=" h-[250px]" />
                         </picture>
 
                         <Link to='/addSpot'>
