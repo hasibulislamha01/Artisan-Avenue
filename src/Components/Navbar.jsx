@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import Drawer from "./Drawer";
+import { AuthContext } from "./AuthProvider";
 
 
 const Navbar = () => {

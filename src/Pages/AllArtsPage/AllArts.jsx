@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 
 const AllArts = () => {
+    
     const touristSpots = useLoaderData()
     console.log(touristSpots)
 
@@ -16,7 +17,7 @@ const AllArts = () => {
             </Helmet>
 
             <h1 className="text-center text-3xl lg:text-5xl font-semibold styled-font my-3 text-rose-300">All Arts here</h1>
-            <div className="">
+            <div className="border border-red-500">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
                         {/* head */}

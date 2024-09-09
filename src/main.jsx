@@ -6,22 +6,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from './Layout/Root';
-import Home from './HomePage/Home';
-import Register from './UserManagement/Register';
 import { HelmetProvider } from 'react-helmet-async';
 import Login from './UserManagement/Login';
-import AuthProvider from './AuthProvider/AuthProvider';
-import AddArts from './AddArtsPage/AddArts';
-import ValidateUser from './UserManagement/ValidateUser';
-import YourArts from './YourArtsPage/YourArts';
-import UpdateArt from './YourArtsPage/UpdateArt';
-import NotFound from './NotFound/NotFound';
-// import AddArts from './Components/AddArts';
 import Countries from './Components/Countries';
-import AllCategories from './Components/AllCategories';
-import AllArts from './AllArtsPage/AllArts';
-import ArtDetails from './AllArtsPage/ArtDetails';
-// import Test from './Components/test';
+import SimilarCategories from './Pages/CategorizedArtsPage/SimilarCategories';
+import ArtDetails from './Pages/AllArtsPage/ArtDetails';
+import NotFound from './Components/NotFound/NotFound';
+import ValidateUser from './UserManagement/ValidateUser';
+import Register from './UserManagement/Register';
+import YourArts from './Pages/YourArtsPage/YourArts';
+import UpdateArt from './Pages/YourArtsPage/UpdateArt';
+import AllArts from './Pages/AllArtsPage/AllArts';
+import Home from './Pages/HomePage/Home';
+import AddArts from './Pages/AddArtsPage/AddArts';
+import AuthProvider from './Components/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -95,7 +93,7 @@ const router = createBrowserRouter([
       {
         path: "/allCategories/:subCategoryId",
         loader: ({ params }) => fetch(`https://a-10-travel-site-server.vercel.app/categories`),
-        element: <AllCategories></AllCategories>
+        element: <SimilarCategories></SimilarCategories>
       },
 
 

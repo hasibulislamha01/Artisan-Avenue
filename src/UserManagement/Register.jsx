@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { FaRegEyeSlash, FaRegEye } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import { AuthContext } from '../Components/AuthProvider';
 
 
 const Register = () => {

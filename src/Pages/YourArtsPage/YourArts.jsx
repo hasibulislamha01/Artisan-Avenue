@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import YourArtCard from "./YourArtCard";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Components/AuthProvider";
 
 
 const YourArts = () => {

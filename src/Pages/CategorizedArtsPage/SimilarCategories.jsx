@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import SingleCategories from './SingleCategories';
+import SameCategoriesCard from './SameCategoriesCard';
 
-const AllCategories = () => {
+const SimilarCategories = () => {
     // const finderProperty = useLoaderData()
     const finderProperty = useParams();
     const subCategory = finderProperty?.subCategoryId
@@ -22,17 +22,22 @@ const AllCategories = () => {
 
     }, [])
 
-    const homologous = art?.filter(singleArt => singleArt?.countryName || singleArt?.subCategoryName === subCategory )
+    const homologous = art?.filter(singleArt => singleArt?.countryName || singleArt?.subCategoryName === subCategory)
     console.log(homologous)
 
 
     return (
-        <div className='container mx-auto min-h-screen flex flex-col justify-center py-20'>
+        <div className='border border-blue-500 container mx-auto min-h-screen flex flex-col justify-center py-20'>
             <h1 className='text-center text-3xl lg:text-7xl styled-font text-rose-300 my-6
             '>{subCategory}</h1>
-            <div className='space-y-6'>
+            <div className='space-y-6 border border-red-600'>
                 {
-                   homologous?.map(item=> <SingleCategories key={item._id} item={item}></SingleCategories>)
+                    homologous?.map(art =>
+                        <SameCategoriesCard
+                            key={art._id}
+                            item={art}
+                        />
+                    )
                 }
             </div>
         </div>
@@ -43,4 +48,4 @@ const AllCategories = () => {
 //     subCategory: PropTypes.
 // }
 
-export default AllCategories;
+export default SimilarCategories;

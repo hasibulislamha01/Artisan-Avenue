@@ -2,12 +2,12 @@
 // import { AuthContext } from "../AuthProvider/AuthProvider";
 
 import { useLoaderData } from "react-router-dom";
-import Slider from "../Components/Slider";
-import ArtCard from "../AllArtsPage/ArtCard";
-import Feedback from "../Components/Feedback";
-import Help from "../Components/Help";
+import Slider from "../../Components/Slider";
 import Categories from "./Categories";
 import { Helmet } from "react-helmet-async";
+import Feedback from "./Feedback";
+import Help from "./Help";
+import ArtCard from "../AllArtsPage/ArtCard";
 
 // import ValidateUser from "../UserManagement/ValidateUser";
 

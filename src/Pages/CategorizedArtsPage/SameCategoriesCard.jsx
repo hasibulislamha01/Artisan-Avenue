@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-const SingleCategories = ({ item }) => {
+const SameCategoriesCard = ({ item }) => {
     return (
 
         // canvas container
@@ -40,8 +40,8 @@ const SingleCategories = ({ item }) => {
     );
 };
 
-SingleCategories.propTypes = {
+SameCategoriesCard.propTypes = {
     item: PropTypes.object
 }
 
-export default SingleCategories;
+export default SameCategoriesCard;

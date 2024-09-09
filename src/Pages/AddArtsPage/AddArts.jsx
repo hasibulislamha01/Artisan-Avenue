@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import toast, { Toaster } from "react-hot-toast";
 import Select from 'react-select'
-import { AuthContext } from "../AuthProvider/AuthProvider";
+import { AuthContext } from "../../Components/AuthProvider";
 
 const AddArts = () => {
 

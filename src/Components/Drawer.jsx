@@ -1,8 +1,8 @@
 import { Drawer as SlidingMenu, Box, Typography } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { IoIosLogIn } from "react-icons/io";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const Drawer = () => {
 

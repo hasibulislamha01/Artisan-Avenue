@@ -4,10 +4,10 @@ import toast, { Toaster } from 'react-hot-toast';
 import { FaGithub, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { Bounce } from 'react-awesome-reveal';
 import { GithubAuthProvider } from 'firebase/auth';
+import { AuthContext } from '../Components/AuthProvider';
 
 const Login = () => {
 
