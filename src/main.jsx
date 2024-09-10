@@ -10,7 +10,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Login from './UserManagement/Login';
 import Countries from './Components/Countries';
 import SimilarCategories from './Pages/CategorizedArtsPage/SimilarCategories';
-import ArtDetails from './Pages/AllArtsPage/ArtDetails';
+import ArtDetails from './Pages/ArtDetailPage/ArtDetails';
 import NotFound from './Components/NotFound/NotFound';
 import ValidateUser from './UserManagement/ValidateUser';
 import Register from './UserManagement/Register';

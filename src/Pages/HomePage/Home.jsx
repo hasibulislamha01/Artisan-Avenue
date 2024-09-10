@@ -14,7 +14,7 @@ import ArtCard from "../AllArtsPage/ArtCard";
 const Home = () => {
     const spots = useLoaderData()
     return (
-        <div  className=" pb-16 lg:pb-32">
+        <div  className=" bg-rose-50 pb-16 lg:pb-32">
             <Helmet>
                 Artisan Avenue | Home
             </Helmet>

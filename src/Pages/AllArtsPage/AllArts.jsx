@@ -16,8 +16,8 @@ const AllArts = () => {
                 Artisan Avenue | Art List
             </Helmet>
 
-            <h1 className="text-center text-3xl lg:text-5xl font-semibold styled-font my-3 text-rose-300">All Arts here</h1>
-            <div className="border border-red-500">
+            <h1 className="text-center text-3xl lg:text-5xl font-semibold styled-font my-3 text-gray-400">All Arts here</h1>
+            <div className="">
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
                         {/* head */}
@@ -38,7 +38,7 @@ const AllArts = () => {
                                         <td>{art?.countryName || art?.subCategoryName}</td>
                                         {art?.inStock ? <td>In Stock</td> : <td>Out of Stock</td>}
                                         <td>{art?.cost}</td>
-                                        <td> <Link to={`/spot/${art._id}`} className="btn bg-rose-200 btn-sm">View Details</Link></td>
+                                        <td> <Link to={`/spot/${art._id}`} className="btn text-sky-400 hover:text-black bg-base-200 hover:bg-[#FFD662] btn-sm transition-all duration-500">View Details</Link></td>
                                     </tr>)
                             }
                         </tbody>

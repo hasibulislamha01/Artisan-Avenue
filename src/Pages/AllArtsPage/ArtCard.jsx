@@ -5,12 +5,12 @@ const ArtCard = ({ spot }) => {
     console.log(spot)
 
     return (
-        <div className="card bg-base-100 shadow-xl platypi">
+        <div className="card shadow-xl platypi rounded-[7px] bg-base-100">
             <figure><img className="h-[200px] w-full" src={spot?.photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-sky-400">{spot?.craftName || spot?.spotName}</h2>
                 <h6>{spot?.countryName || spot?.subCategoryName}</h6>
-                <hr className='border-b-[1px] border-blue-200 w-full mx-auto' />
+                <hr className='border-b-[1px] border-sky-200 w-full mx-auto' />
                 <div className='flex items-center'>
                     <p>Rating: <span>{spot?.location || spot?.rating}</span> </p>
 

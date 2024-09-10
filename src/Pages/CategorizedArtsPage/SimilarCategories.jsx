@@ -27,10 +27,10 @@ const SimilarCategories = () => {
 
 
     return (
-        <div className='border border-blue-500 container mx-auto min-h-screen flex flex-col justify-center py-20'>
-            <h1 className='text-center text-3xl lg:text-7xl styled-font text-rose-300 my-6
+        <div className='container mx-auto min-h-screen flex flex-col justify-center py-20'>
+            <h1 className='text-center text-3xl lg:text-7xl styled-font text-sky-300 my-6
             '>{subCategory}</h1>
-            <div className='space-y-6 border border-red-600'>
+            <div className='space-y-6'>
                 {
                     homologous?.map(art =>
                         <SameCategoriesCard

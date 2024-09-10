@@ -8,19 +8,27 @@ const Drawer = () => {
 
     const { user, logoutUser } = useContext(AuthContext)
     const [open, setOpen] = useState(false);
-    const [theme, setTheme] = useState('pastel')
+    const [dark, setDark] = useState(false)
     const image = user?.photoURL;
     console.log(image)
 
 
-    console.log(theme)
+    console.log(dark)
     const toggleTheme = (e) => {
         if(e.target.checked){
-            setTheme('forest')
+            setDark(!dark)
         }
         else{
-            setTheme('pastel')
+            setDark(false)
         }
+    }
+
+    const themes = [ 'pastel', "forest" ]
+    let theme;
+    if(dark){
+        theme = themes[1]
+    } else {
+        theme = themes[0]
     }
 
     useEffect(()=>{

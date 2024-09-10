@@ -8,7 +8,7 @@ const ArtDetails = () => {
     const spot = data.find(singleData => singleData._id == id)
     console.log(spot)
     return (
-        <div className="container mx-auto flex flex-col justify-center py-20 text-center">
+        <div className=" container mx-auto flex flex-col justify-center py-20 text-center">
             <div>
                 <img className="w-full mx-auto" src={spot?.photo} alt="" />
             </div>
@@ -19,7 +19,7 @@ const ArtDetails = () => {
 
                         <span>{spot?.countryName || spot?.subCategoryName}</span>
                     </h3>
-                    <hr className="mb-3 w-full lg:w-1/2  mx-auto" />
+                    <hr className="border-b border-sky-200 mb-3 w-full lg:w-1/2  mx-auto" />
                 </div>
 
                 <div className="space-y-2">
